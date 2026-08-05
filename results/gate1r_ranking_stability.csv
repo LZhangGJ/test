@@ -1,0 +1,5 @@
+split_seed,task,train_seed_modal_paths,modal_consistent_two_of_three,median_pairwise_spearman_shot_support,mean_pairwise_spearman_shot_support,minimum_pairwise_spearman_shot_support,condition_count
+6,breastmnist,source_tissuemnist|source_bloodmnist|source_tissuemnist,True,0.14285714285714288,0.10992388864438794,-1.0,30
+6,octmnist,source_bloodmnist|source_bloodmnist|source_bloodmnist,True,0.3188740696088466,0.2605923815343941,-0.9276336570439174,30
+36,bloodmnist,source_dermamnist|shared|source_dermamnist,True,0.14285714285714288,0.10747818653324909,-0.9276336570439175,30
+36,pathmnist,shared|source_organmnist|shared,True,0.7142857142857143,0.690780274612104,-0.2,30
