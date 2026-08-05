@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version", "outcome", "criteria", "raw_values", "thresholds",
+    "experiment_id", "config_hash", "runtime_git_sha", "gate1r_outcome",
+    "host_gpu", "elapsed_time", "gpu_hours", "test_count"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "outcome": {"enum": ["PASS", "FAIL"]},
+    "gate1r_outcome": {"const": "PASS_SOFT"},
+    "criteria": {"type": "object"},
+    "raw_values": {"type": "object"},
+    "thresholds": {"type": "object"},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "config_hash": {"pattern": "^[0-9a-f]{64}$"},
+    "runtime_git_sha": {"pattern": "^[0-9a-f]{40}$"},
+    "host_gpu": {"type": "object"},
+    "elapsed_time": {"type": "number", "minimum": 0},
+    "gpu_hours": {"type": "number", "minimum": 0},
+    "test_count": {"type": "integer", "minimum": 1}
+  }
+}

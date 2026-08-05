@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "protocol_id": "gate2-soft-support-v1",
+  "authorization": {
+    "gate1r_outcome_required": "PASS_SOFT",
+    "gate1r_decision_sha256": "779ae2fd3a45623370fc4c9fdbe23d02c49b90254ee29795271f840c1a7c59ad",
+    "hard_top1_role": "secondary_compute_matched_diagnostic_only"
+  },
+  "fresh_task_split_seeds": [6, 36],
+  "train_seeds": [2, 3, 4],
+  "shots": [1, 5, 16],
+  "support_resamples": 20,
+  "query_per_class": 20,
+  "bootstrap_repeats": 10000,
+  "model_and_training_source": "configs/m3_gate1r_confirmatory.json",
+  "router_candidate_set": ["shared", "source_*"],
+  "primary_method": "support_conditioned_soft_mixture",
+  "methods": [
+    "random_expected",
+    "query_only_weighting",
+    "support_prototype_weighting",
+    "support_conditioned_soft_mixture",
+    "shared_fallback",
+    "support_query_shuffle",
+    "support_label_removal",
+    "wrong_support_task",
+    "compute_matched_support_top1_diagnostic",
+    "capacity_matched_single"
+  ],
+  "routing": {
+    "reference_signature": "mean_l2_normalized_adapted_meta_train_embedding",
+    "query_only_score": "expert_reference_cosine_similarity_from_query_embeddings",
+    "support_score": "standardized_negative_support_self_prototype_nll_plus_standardized_expert_reference_cosine_similarity",
+    "label_removed_score": "expert_reference_cosine_similarity_from_unlabeled_support_embeddings",
+    "route_temperature": 0.25,
+    "hyperparameter_trials": 1,
+    "shared_fallback_weight": 0.5,
+    "soft_mixture_space": "expert_class_probability",
+    "support_prototype_space": "weighted_expert_embedding"
+  },
+  "gate2_requirements": {
+    "each_split_mean_delta_gt": 0.0,
+    "each_split_hierarchical_ci_low_gt": 0.0,
+    "minimum_positive_task_count": 3,
+    "required_primary_comparisons": [
+      "random_expected",
+      "query_only_weighting",
+      "support_query_shuffle",
+      "support_label_removal"
+    ]
+  },
+  "outcome_rule": {
+    "PASS": "all_required_primary_comparisons_pass_all_split_and_task_requirements",
+    "FAIL": "any_required_primary_comparison_fails_any_requirement"
+  },
+  "required_outputs": [
+    "reports/gate2_report.md",
+    "reports/gate2_decision.json",
+    "results/gate2_episode_metrics.parquet",
+    "results/gate2_router_comparison.csv",
+    "results/gate2_support_ablation.csv",
+    "results/gate2_resource_usage.csv"
+  ]
+}

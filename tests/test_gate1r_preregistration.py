@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import runpy
+import shutil
 from pathlib import Path
 
 import torch
@@ -16,9 +17,11 @@ def _json(path: str) -> dict:
     return json.loads((PROJECT_ROOT / path).read_text(encoding="utf-8"))
 
 
-def test_preregistration_validator_accepts_frozen_protocol() -> None:
+def test_preregistration_validator_accepts_frozen_protocol(tmp_path: Path) -> None:
+    shutil.copytree(PROJECT_ROOT / "configs", tmp_path / "configs")
+    shutil.copytree(PROJECT_ROOT / "schemas", tmp_path / "schemas")
     module = runpy.run_path(str(PROJECT_ROOT / "scripts" / "validate_gate1r_preregistration.py"))
-    result = module["validate_preregistration"](PROJECT_ROOT)
+    result = module["validate_preregistration"](tmp_path)
     assert result["status"] == "VALID"
     assert result["fresh_split_seeds"] == [6, 36]
     assert result["canonical_decision"] == "FAIL"
