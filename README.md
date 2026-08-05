@@ -1,35 +1,125 @@
 # Target-aware MoE × Few-shot Adaptation
 
-本仓库保存两轮文献调研综合材料，以及第三阶段“候选创新假设生成、定向查重、可证伪实验设计与研究方向筛选”的完整交付物。
+This repository is the research and execution hub for a staged study of
+**target-aware mixture-of-experts, few-shot adaptation, VLM/VLA, medical
+imaging, and autonomous/robotic systems**.
 
-## 核心结论
+The project is intentionally organized around falsifiable gates. The first
+coding objective is not to build a complex MoE. It is to determine whether a
+fixed expert bank contains usable task-specific capability, whether a few-shot
+support set provides routing information beyond the query itself, and whether
+route uncertainty predicts the regret of selecting the wrong expert.
 
-第三阶段将研究空间收敛为四个可证伪假设：
+## Current decision
 
-1. **H1（主推荐，91/100）**：面向无 task ID、不平衡、含噪和跨域 support set 的 uncertainty-aware support-conditioned expert routing。
-2. **H2（备用，84/100）**：固定专家预算下的 reuse–expand–merge–evict 生命周期管理。
-3. **H3（78/100）**：多源 target 冲突感知的专家路由、可信度校准与拒识。
-4. **H4（65/100）**：无需完整重训 router 的 few-shot VLA 技能插入、安全拒识与回滚。
+Primary direction:
 
-## 文件
+> Selective expert adaptation under unreliable support: for an unseen task
+> without task ID, decide whether the support evidence justifies selecting or
+> mixing specialized experts, falling back to a shared expert, requesting more
+> support, or abstaining.
 
-| 文件 | 内容 |
+Research hypotheses are separated into:
+
+- **H1a — expert value:** an episode-level oracle can outperform a shared or
+  equal-parameter single adapter, and the best expert varies by task.
+- **H1b — support value:** a support-conditioned router outperforms query-only
+  and random routing on held-out tasks.
+- **H1c — selective specialization:** route uncertainty predicts routing regret
+  and supports useful fallback or abstention.
+- **H2 — fixed-budget lifecycle:** only after H1 is supported, study reuse,
+  update, spawn, merge, replacement, and eviction under a fixed expert budget.
+- **H3 — target conflict:** retain as a stress test of H1 rather than an
+  independent generic multimodal-fusion paper.
+- **H4 — VLA skill insertion:** retain as a high-cost, long-term extension.
+
+## Repository map
+
+| Path | Purpose |
 |---|---|
-| `Target-aware_MoE_Few-shot_两轮调研综合总结.docx` | 第一、二轮文献调研的综合总结与证据边界 |
-| `phase3_research_report.md` | 第三阶段研究报告 |
-| `phase3_candidate_hypotheses.csv` | 四个候选创新假设的机器可读表 |
-| `phase3_candidate_scorecard.csv` | 候选方向评分表 |
-| `phase3_experiment_matrix.csv` | 165 行实验矩阵 |
-| `phase3_literature_dedup_matrix.csv` | 32 篇关键文献的定向查重矩阵 |
-| `phase3_research_plan.json` | 完整机器可读研究计划 |
-| `phase3_research_bundle.zip` | 第三阶段交付物压缩包 |
-| `SHA256SUMS.txt` | 文件完整性校验值 |
+| `docs/01_round1_research_map.md` | Original broad research map and representative-paper table |
+| `docs/02_round2_evidence_audit.md` | Original second-round evidence audit and reclassification |
+| `docs/03_round3_innovation_audit_and_selection.md` | Consolidated innovation hypotheses, novelty boundaries, and experimental decisions |
+| `docs/04_local_implementation_and_execution_plan.md` | Detailed implementation, gates, repository design, multi-host execution, and Windows support |
+| `AGENT_PROMPT.md` | Main prompt for the local Codex agent |
+| `configs/hosts.env.example` | Six-host shared-disk configuration template |
+| `configs/phase1_experiments.csv` | Initial experiment matrix and expected outputs |
+| `prompts/archive/` | Earlier generated reports/prompts preserved for traceability |
 
-## 建议实施顺序
+## Compute environment
 
-1. 先以 oracle/random/wrong router 验证专家库是否存在可利用的路由上限。
-2. 在 MedMNIST-v2 上完成低成本 smoke test。
-3. 使用 WILDS Camelyon17 验证跨医院域偏移。
-4. 通过 kill criteria 后扩展至 2D 医学分割、医学 VLM、专家生命周期与 VLA。
+Linux hosts sharing one disk path:
 
-研究材料中的创新性判断应继续回到原始论文、附录、正式 proceedings 和项目页面定向核验，避免使用未经核验的“首次”表述。
+- `doraemon02`
+- `doraemon03`
+- `doraemon04`
+- `doraemon15`
+- `doraemon19`
+- `doraemon20`
+
+A Windows workstation can be used for CPU/small-data smoke tests and local
+editing. The Linux implementation must not hard-code the shared mount path.
+Copy `configs/hosts.env.example` to `configs/hosts.env`, set the actual paths,
+and keep the latter untracked.
+
+## MedMNIST position
+
+MedMNIST is retained as a formal **cross-dataset unseen-task** benchmark, not
+only as a smoke test. A held-out sub-dataset is absent from expert/router
+training; at evaluation time the model receives a labeled support set but no
+explicit task or dataset ID. The model must infer the target task from support
+content. Multiple task-level splits and support resampling are required.
+
+The first implementation should cover the compatible 2D single-label tasks.
+Multi-label and ordinal tasks must be handled in separate protocols rather than
+silently forced into the same prototypical-classification code path.
+
+## Mandatory gate order
+
+1. **Gate 1 — expert bank value**
+   - shared and equal-parameter single-adapter baselines;
+   - source-task expert bank;
+   - expert × held-out-task matrix;
+   - episode-level oracle and oracle mixture;
+   - wrong/random/swap/mask interventions.
+2. **Gate 2 — support value**
+   - random, query-only, support-prototype, and support-soft-mixture routers;
+   - support–query shuffle and support-label removal;
+   - no learned uncertainty model before Gate 2 passes.
+3. **Gate 3 — route uncertainty**
+   - bootstrap support resampling first;
+   - compare against final prediction entropy;
+   - shared fallback and coverage–risk evaluation;
+   - corruption tests: imbalance, label noise, cross-task outlier, duplicate
+     support.
+4. **External validation / H2 decision**
+   - move to cross-dataset or multi-center medical classification/segmentation;
+   - start expert lifecycle only if Gate 1–3 evidence is positive.
+
+## Non-negotiable controls
+
+- no task ID, dataset name, filesystem path, split name, or manually encoded
+  source identifier may enter the router;
+- report total, trainable, and activated parameters separately;
+- use both capacity-matched and compute-matched comparisons;
+- use multiple training seeds and repeated support sampling;
+- preserve raw per-episode outputs, not only aggregate means;
+- random, oracle, wrong-route, shuffle, swap, mask, and shared-only controls are
+  required;
+- do not interpret activation heatmaps as causal expert specialization;
+- stop at a failed gate instead of hiding a negative result with extra modules.
+
+## Starting the local agent
+
+Give the local Codex agent the contents of `AGENT_PROMPT.md`. It should create a
+working branch, audit all six hosts and the shared path, implement M0–M3 first,
+run the Gate 1 pilot, and continue automatically only when the documented gate
+criteria pass.
+
+## Citation and metadata note
+
+The two raw Deep Research reports preserve session-specific citation markers.
+Those markers are useful for traceability inside the originating session but
+are not a stable bibliography. Before paper writing, replace them with official
+proceedings links, DOI/arXiv identifiers, and a checked BibTeX library. Known
+metadata corrections and uncertainty are recorded in the third-stage report.

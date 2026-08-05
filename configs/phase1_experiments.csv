@@ -1,0 +1,11 @@
+experiment_id,phase,gate,dataset,split_seed,train_seed,shots,method,router,expert_bank,support_condition,required_output
+M0_ENV,M0,none,synthetic,0,0,1,environment_audit,none,none,clean,environment_inventory.json
+M1_SMOKE,M1,none,MedMNIST2D,0,0,1,episodic_smoke,none,none,clean,smoke_test.json
+M2_SHARED,M2,Gate1,MedMNIST2D,0,0,"1;2;5;10;16",shared_expert,none,shared,clean,task_metrics.parquet
+M2_SINGLE,M2,Gate1,MedMNIST2D,0,0,"1;2;5;10;16",equal_parameter_single_adapter,none,single,clean,task_metrics.parquet
+M2_SOURCE,M2,Gate1,MedMNIST2D,0,0,"1;2;5;10;16",source_task_experts,fixed,source_plus_shared,clean,expert_task_matrix.csv
+M3_ORACLE,M3,Gate1,MedMNIST2D,0,0,"1;2;5;10;16",episode_oracle,oracle,source_plus_shared,clean,gate1_report.md
+M4_RANDOM,M4,Gate2,MedMNIST2D,0,0,"1;2;5;10;16",random_router,random,source_plus_shared,clean,router_metrics.parquet
+M4_QUERY,M4,Gate2,MedMNIST2D,0,0,"1;2;5;10;16",query_only_router,query_only,source_plus_shared,clean,router_metrics.parquet
+M4_SUPPORT,M4,Gate2,MedMNIST2D,0,0,"1;2;5;10;16",support_prototype_router,support,source_plus_shared,clean,gate2_report.md
+M5_BOOTSTRAP,M5,Gate3,MedMNIST2D,0,0,"1;2;5;10;16",bootstrap_uncertainty,support,source_plus_shared,"clean;imbalance;label_noise;outlier;duplicate",gate3_report.md

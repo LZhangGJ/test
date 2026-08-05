@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+configs/hosts.env
+
+# Data, caches, checkpoints, and experiment outputs
+data/
+datasets/
+cache/
+feature_cache/
+checkpoints/
+runs/
+outputs/
+artifacts/
+wandb/
+mlruns/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# Logs and scheduler output
+logs/
+slurm-*.out
+slurm-*.err
+*.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
