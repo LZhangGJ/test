@@ -1,0 +1,762 @@
+{
+  "dataset_samples": 546,
+  "episodes": [
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "28b873a7052335dc94a6fe1eb21d53cdc1221aef2022e25685dd1e84a00e7516",
+      "query_indices": [
+        204,
+        518,
+        489,
+        357,
+        32,
+        362,
+        315,
+        44,
+        130,
+        198
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 0,
+      "shots": 1,
+      "support_indices": [
+        163,
+        50
+      ],
+      "support_shape": [
+        2,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "6c470c40f81da8f3e2cbe5dac6b58df1d589606004b34408e51abaae1fb07c11",
+      "query_indices": [
+        49,
+        182,
+        317,
+        223,
+        289,
+        33,
+        157,
+        376,
+        300,
+        198
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 1,
+      "shots": 1,
+      "support_indices": [
+        14,
+        97
+      ],
+      "support_shape": [
+        2,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "02ad49a06f71732033e1629e3ff310003588566a72288c37598b1d823156d240",
+      "query_indices": [
+        233,
+        115,
+        314,
+        417,
+        342,
+        431,
+        445,
+        219,
+        130,
+        97
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 2,
+      "shots": 1,
+      "support_indices": [
+        200,
+        462
+      ],
+      "support_shape": [
+        2,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "715ea656c98e35a3d145cbed0f213b1e513be1462d2e0bf40e01ceeddbe02822",
+      "query_indices": [
+        518,
+        489,
+        357,
+        32,
+        85,
+        44,
+        130,
+        198,
+        479,
+        194
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 0,
+      "shots": 2,
+      "support_indices": [
+        163,
+        204,
+        362,
+        315
+      ],
+      "support_shape": [
+        4,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "7f2f0d50d4e775dda4d575c7f8ae18bac1919b5e2b9cb17c47731ffd126e7ca6",
+      "query_indices": [
+        182,
+        317,
+        223,
+        289,
+        170,
+        376,
+        300,
+        198,
+        135,
+        453
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 1,
+      "shots": 2,
+      "support_indices": [
+        14,
+        49,
+        33,
+        157
+      ],
+      "support_shape": [
+        4,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "fcdb4ba2290267d43a64b7145479dd4a8d9e9e3bd2ab1fdac09e61b68ee68ff4",
+      "query_indices": [
+        115,
+        314,
+        417,
+        342,
+        316,
+        362,
+        136,
+        398,
+        429,
+        252
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 2,
+      "shots": 2,
+      "support_indices": [
+        200,
+        233,
+        130,
+        97
+      ],
+      "support_shape": [
+        4,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "0d538274e56ed547acd71655846a98741037e4b5b994c4708b531ff7e0133ed1",
+      "query_indices": [
+        32,
+        85,
+        423,
+        72,
+        212,
+        376,
+        460,
+        481,
+        59,
+        399
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 0,
+      "shots": 5,
+      "support_indices": [
+        163,
+        204,
+        518,
+        489,
+        357,
+        198,
+        479,
+        194,
+        79,
+        135
+      ],
+      "support_shape": [
+        10,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "405c63784c67afcefdf655c851309a4dc2b5f207f55602696af09443d286398d",
+      "query_indices": [
+        289,
+        170,
+        52,
+        233,
+        496,
+        1,
+        296,
+        293,
+        56,
+        34
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 1,
+      "shots": 5,
+      "support_indices": [
+        14,
+        49,
+        182,
+        317,
+        223,
+        300,
+        198,
+        135,
+        453,
+        320
+      ],
+      "support_shape": [
+        10,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "dc1287530d9e0c12636e0343ae5bf1ad4c079a1133a75226ba1d946d8e22e9c8",
+      "query_indices": [
+        342,
+        316,
+        212,
+        170,
+        489,
+        147,
+        263,
+        87,
+        408,
+        244
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 2,
+      "shots": 5,
+      "support_indices": [
+        200,
+        233,
+        115,
+        314,
+        417,
+        136,
+        398,
+        429,
+        252,
+        264
+      ],
+      "support_shape": [
+        10,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "1d105424e972fe443449303e154fa6406fbe54552c363c5a4b3f70980ebdc400",
+      "query_indices": [
+        297,
+        289,
+        142,
+        220,
+        496,
+        500,
+        331,
+        48,
+        368,
+        7
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 0,
+      "shots": 10,
+      "support_indices": [
+        163,
+        204,
+        518,
+        489,
+        357,
+        32,
+        85,
+        423,
+        72,
+        212,
+        460,
+        481,
+        59,
+        399,
+        285,
+        358,
+        159,
+        392,
+        397,
+        60
+      ],
+      "support_shape": [
+        20,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "9691b59c519ec568b81553bb198b2e88fd9ff82045238dda55f8481753e2ecd2",
+      "query_indices": [
+        411,
+        297,
+        220,
+        424,
+        4,
+        92,
+        455,
+        319,
+        438,
+        266
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 1,
+      "shots": 10,
+      "support_indices": [
+        14,
+        49,
+        182,
+        317,
+        223,
+        289,
+        170,
+        52,
+        233,
+        496,
+        296,
+        293,
+        56,
+        34,
+        247,
+        86,
+        384,
+        385,
+        479,
+        47
+      ],
+      "support_shape": [
+        20,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "aa19226be6f40fb9d484f192dbee44622e7ef6bad1a9bc40a175abb639f20a61",
+      "query_indices": [
+        223,
+        536,
+        346,
+        364,
+        228,
+        473,
+        355,
+        267,
+        350,
+        252
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 2,
+      "shots": 10,
+      "support_indices": [
+        200,
+        233,
+        115,
+        314,
+        417,
+        342,
+        316,
+        212,
+        170,
+        489,
+        263,
+        87,
+        408,
+        244,
+        15,
+        84,
+        54,
+        544,
+        469,
+        184
+      ],
+      "support_shape": [
+        20,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "1720fc78d06422f625ac0088221b1d4dbdf586217a23c459bc296990b23689f0",
+      "query_indices": [
+        536,
+        378,
+        483,
+        242,
+        521,
+        535,
+        292,
+        131,
+        106,
+        9
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 0,
+      "shots": 16,
+      "support_indices": [
+        163,
+        204,
+        518,
+        489,
+        357,
+        32,
+        85,
+        423,
+        72,
+        212,
+        297,
+        289,
+        142,
+        220,
+        496,
+        99,
+        397,
+        60,
+        500,
+        331,
+        48,
+        368,
+        7,
+        321,
+        466,
+        286,
+        213,
+        413,
+        440,
+        140,
+        125,
+        448
+      ],
+      "support_shape": [
+        32,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "fafff413712dfa38ecaae9cf7807eaf19d23553ac3fdf11d22df0eddb8cce74f",
+      "query_indices": [
+        386,
+        98,
+        342,
+        156,
+        503,
+        121,
+        168,
+        322,
+        78,
+        530
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 1,
+      "shots": 16,
+      "support_indices": [
+        14,
+        49,
+        182,
+        317,
+        223,
+        289,
+        170,
+        52,
+        233,
+        496,
+        411,
+        297,
+        220,
+        424,
+        4,
+        403,
+        385,
+        479,
+        47,
+        92,
+        455,
+        319,
+        438,
+        266,
+        48,
+        18,
+        70,
+        97,
+        36,
+        291,
+        37,
+        543
+      ],
+      "support_shape": [
+        32,
+        3,
+        28,
+        28
+      ]
+    },
+    {
+      "class_ids": [
+        0,
+        1
+      ],
+      "disjoint": true,
+      "episode_hash": "21cc90f66a72297aa8ee5b0ddcb76bc5b6a684aea571dae1d7c1dc21fef66f7c",
+      "query_indices": [
+        340,
+        27,
+        149,
+        95,
+        275,
+        131,
+        506,
+        441,
+        487,
+        291
+      ],
+      "query_shape": [
+        10,
+        3,
+        28,
+        28
+      ],
+      "repetition": 2,
+      "shots": 16,
+      "support_indices": [
+        200,
+        233,
+        115,
+        314,
+        417,
+        342,
+        316,
+        212,
+        170,
+        489,
+        223,
+        536,
+        346,
+        364,
+        228,
+        156,
+        473,
+        355,
+        54,
+        267,
+        350,
+        252,
+        425,
+        134,
+        305,
+        155,
+        318,
+        394,
+        60,
+        313,
+        533,
+        422
+      ],
+      "support_shape": [
+        32,
+        3,
+        28,
+        28
+      ]
+    }
+  ],
+  "experiment_id": "M1_SMOKE",
+  "label_counts": {
+    "0": 147,
+    "1": 399
+  },
+  "router_fields": [
+    "support_images",
+    "support_labels",
+    "query_images"
+  ],
+  "schema_version": 1,
+  "status": "SUCCEEDED",
+  "task": "breastmnist"
+}

@@ -14,16 +14,16 @@ venv/
 configs/hosts.env
 
 # Data, caches, checkpoints, and experiment outputs
-data/
-datasets/
-cache/
-feature_cache/
-checkpoints/
-runs/
-outputs/
-artifacts/
-wandb/
-mlruns/
+/data/
+/datasets/
+/cache/
+/feature_cache/
+/checkpoints/
+/runs/
+/outputs/
+/artifacts/
+/wandb/
+/mlruns/
 *.ckpt
 *.pt
 *.pth

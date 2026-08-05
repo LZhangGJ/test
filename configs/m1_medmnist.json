@@ -1,0 +1,12 @@
+{
+  "dataset_version": "MedMNIST v2",
+  "image_size": 28,
+  "task_split_seeds": [0, 1, 6, 36],
+  "validation_group_count": 1,
+  "test_group_count": 2,
+  "shots": [1, 2, 5, 10, 16],
+  "query_per_class": 5,
+  "pilot_support_resamples": 3,
+  "final_support_resamples": 20,
+  "num_workers_windows": 0
+}

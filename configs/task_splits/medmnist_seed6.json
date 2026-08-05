@@ -1,0 +1,34 @@
+{
+  "meta_test": [
+    "breastmnist",
+    "octmnist"
+  ],
+  "meta_test_groups": [
+    "breastmnist",
+    "octmnist"
+  ],
+  "meta_train": [
+    "bloodmnist",
+    "organamnist",
+    "organcmnist",
+    "organsmnist",
+    "pathmnist",
+    "pneumoniamnist",
+    "tissuemnist"
+  ],
+  "meta_train_groups": [
+    "bloodmnist",
+    "organmnist",
+    "pathmnist",
+    "pneumoniamnist",
+    "tissuemnist"
+  ],
+  "meta_validation": [
+    "dermamnist"
+  ],
+  "meta_validation_groups": [
+    "dermamnist"
+  ],
+  "seed": 6,
+  "split_hash": "e2aca00b68c72b67eb6f9e9b0b0c53210908312204c357e505919f129c80031b"
+}

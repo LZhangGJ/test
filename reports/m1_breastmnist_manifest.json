@@ -1,0 +1,38 @@
+[
+  {
+    "label_counts": {
+      "0": 147,
+      "1": 399
+    },
+    "sample_count": 546,
+    "size": 28,
+    "source_file": "data\\medmnist\\breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "train",
+    "task": "breastmnist"
+  },
+  {
+    "label_counts": {
+      "0": 21,
+      "1": 57
+    },
+    "sample_count": 78,
+    "size": 28,
+    "source_file": "data\\medmnist\\breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "val",
+    "task": "breastmnist"
+  },
+  {
+    "label_counts": {
+      "0": 42,
+      "1": 114
+    },
+    "sample_count": 156,
+    "size": 28,
+    "source_file": "data\\medmnist\\breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "test",
+    "task": "breastmnist"
+  }
+]
