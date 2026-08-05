@@ -2,41 +2,16 @@
   "format": "base64-split-tar-gzip-v1",
   "part_count": 6,
   "parts": [
-    {
-      "name": "part-000.b64",
-      "bytes": 18000,
-      "sha256": "2945768f9ac096ff7c662286429829c7f8cd795a3abd9fad03bfb87985a56866"
-    },
-    {
-      "name": "part-001.b64",
-      "bytes": 18000,
-      "sha256": "fb2dba86e73c9e82409c2831053d811dc4f2d7bf253b64687e1f99e24f1eb41d"
-    },
-    {
-      "name": "part-002.b64",
-      "bytes": 18000,
-      "sha256": "f47f94c0679a273283cb8d4291625f89f49188e48e4794af6bf82d3fb2da390c"
-    },
-    {
-      "name": "part-003.b64",
-      "bytes": 17766,
-      "sha256": "3278a54b6de88838b84f4c53cfde69399083e039c030349c2395f3f3bd47f009"
-    },
-    {
-      "name": "part-004.b64",
-      "bytes": 17767,
-      "sha256": "07757dfc3ac61e0fd8f601094dcc4beb0e8b016c8f7a925b235186667c261104"
-    },
-    {
-      "name": "part-005.b64",
-      "bytes": 13752,
-      "sha256": "b4bbeee1285765b217bfea94ca567420dfce40e8fe660a64e205007147aaccbf"
-    }
+    {"name": "part-000.b64", "bytes": 18000, "sha256": "2945768f9ac096ff7c662286429829c7f8cd795a3abd9fad03bfb87985a56866"},
+    {"name": "part-001.b64", "bytes": 18000, "sha256": "fb2dba86e73c9e82409c2831053d811dc4f2d7bf253b64687e1f99e24f1eb41d"},
+    {"name": "part-002.b64", "bytes": 18000, "sha256": "27f5fe88c539f2d3af29a023ecf771c51651de212700522b56efdec213dc8495"},
+    {"name": "part-003.b64", "bytes": 17766, "sha256": "3278a54b6de88838b84f4c53cfde69399083e039c030349c2395f3f3bd47f009"},
+    {"name": "part-004.b64", "bytes": 17767, "sha256": "07757dfc3ac61e0fd8f601094dcc4beb0e8b016c8f7a925b235186667c261104"},
+    {"name": "part-005.b64", "bytes": 13752, "sha256": "b4bbeee1285765b217bfea94ca567420dfce40e8fe660a64e205007147aaccbf"}
   ],
-  "base64_bytes": 103285,
-  "base64_sha256": "0fa70c6230370e3024fea08cfbcc856733df74927c87b87b57b99db164de74e9",
   "archive_bytes": 76936,
   "archive_sha256": "644c71ef8989a31ba6c4ed18f05954e368507b43b9318552d1941e66f3d0f485",
   "extract_to": ".",
+  "materialization_attempt": 2,
   "description": "Target-aware MoE x few-shot adaptation research, implementation plan, and local Codex agent prompt."
 }
