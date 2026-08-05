@@ -1,0 +1,269 @@
+{
+  "config_hash": "e073e31591447325b400ea918499d33fbba2ed66daeeefaf5a625bfe228a6cba",
+  "criteria": {
+    "query_only_weighting_each_split_ci": false,
+    "query_only_weighting_each_split_mean": true,
+    "query_only_weighting_positive_tasks": true,
+    "random_expected_each_split_ci": false,
+    "random_expected_each_split_mean": false,
+    "random_expected_positive_tasks": false,
+    "support_label_removal_each_split_ci": false,
+    "support_label_removal_each_split_mean": false,
+    "support_label_removal_positive_tasks": true,
+    "support_query_shuffle_each_split_ci": false,
+    "support_query_shuffle_each_split_mean": false,
+    "support_query_shuffle_positive_tasks": true
+  },
+  "elapsed_time": 2757.029542531818,
+  "experiment_id": "GATE2_SOFT_20260805T114653Z_82ced99",
+  "gate1r_decision_sha256": "779ae2fd3a45623370fc4c9fdbe23d02c49b90254ee29795271f840c1a7c59ad",
+  "gate1r_outcome": "PASS_SOFT",
+  "gpu_hours": 0.7658415395921717,
+  "host_gpu": {
+    "device": "cuda:1",
+    "gpu_name": "Quadro RTX 8000",
+    "host": "doraemon15"
+  },
+  "outcome": "FAIL",
+  "raw_values": {
+    "capacity_matched_single": {
+      "split": {
+        "36": {
+          "ci_high": -0.005052083890057272,
+          "ci_low": -0.037098767887800935,
+          "mean": -0.01880208378036817,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.004201387041765783,
+          "ci_low": -0.015902780418594678,
+          "mean": -0.004027780062622494,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": -0.0073263881935013665,
+        "36:pathmnist": -0.030277779367234973,
+        "6:breastmnist": -0.009722225699159833,
+        "6:octmnist": 0.0016666655739148459
+      }
+    },
+    "compute_matched_support_top1_diagnostic": {
+      "split": {
+        "36": {
+          "ci_high": 0.007031248642338646,
+          "ci_low": 0.001990739322370953,
+          "mean": 0.004446373962693744,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.00552083485863275,
+          "ci_low": 0.0010416680739985572,
+          "mean": 0.003229167891873254,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.005034723712338342,
+        "36:pathmnist": 0.0038580242130491467,
+        "6:breastmnist": 0.00319444520605935,
+        "6:octmnist": 0.0032638905776871574
+      }
+    },
+    "oracle_gap_recovery": -0.14149306313714272,
+    "primary_mean_accuracy": 0.5469020173367527,
+    "primary_mean_nll": 1.2461736001902157,
+    "primary_route_entropy_mean": 0.475125859720211,
+    "query_only_weighting": {
+      "split": {
+        "36": {
+          "ci_high": 0.010354936642365323,
+          "ci_low": -0.0030864177478684314,
+          "mean": 0.0038059419641892117,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.022430552459425396,
+          "ci_low": -0.01996527390347587,
+          "mean": 0.0003819445768992106,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.004062502003378338,
+        "36:pathmnist": 0.0035493819250000847,
+        "6:breastmnist": 0.015972221228811475,
+        "6:octmnist": -0.015208332075013055
+      }
+    },
+    "random_expected": {
+      "split": {
+        "36": {
+          "ci_high": 0.005827767321219043,
+          "ci_low": -0.015853910683826716,
+          "mean": -0.004477237323643985,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.0044215863018676055,
+          "ci_low": -0.008414349356252284,
+          "mean": -0.0016319439504985465,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.0023726875721304472,
+        "36:pathmnist": -0.011327162219418423,
+        "6:breastmnist": 0.0015046298641849427,
+        "6:octmnist": -0.004768517765182036
+      }
+    },
+    "shared": {
+      "split": {
+        "36": {
+          "ci_high": 0.0018229190715485148,
+          "ci_low": -0.03024730329712232,
+          "mean": -0.013634259667661455,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.008923613863686721,
+          "ci_low": -0.00277777761220932,
+          "mean": 0.0037152789533138274,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": -0.0012499986423386467,
+        "36:pathmnist": -0.026018520692984264,
+        "6:breastmnist": 0.0016666667328940497,
+        "6:octmnist": 0.005763891173733605
+      }
+    },
+    "shared_fallback": {
+      "split": {
+        "36": {
+          "ci_high": -0.0011805515301724274,
+          "ci_low": -0.023811727931929955,
+          "mean": -0.01208333240614997,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.0047222223588162,
+          "ci_low": -0.002083334335022503,
+          "mean": 0.0014930562012725407,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": -0.003333331313398149,
+        "36:pathmnist": -0.02083333349890179,
+        "6:breastmnist": 0.0012499994701809353,
+        "6:octmnist": 0.001736112932364146
+      }
+    },
+    "support_label_removal": {
+      "split": {
+        "36": {
+          "ci_high": 0.01048635027060906,
+          "ci_low": -0.0024945014508234126,
+          "mean": 0.004182099426786105,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.02152777744664086,
+          "ci_low": -0.02048610855514805,
+          "mean": -0.00017361193895339965,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.0044444460835721756,
+        "36:pathmnist": 0.003919752770000034,
+        "6:breastmnist": 0.01541666438182195,
+        "6:octmnist": -0.01576388825972875
+      }
+    },
+    "support_prototype_weighting": {
+      "split": {
+        "36": {
+          "ci_high": -0.0001388882411022981,
+          "ci_low": -0.002482635780341095,
+          "mean": -0.0012094895044962564,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.0013194443471729756,
+          "ci_low": -0.0036805551085207196,
+          "mean": -0.0014583332671059502,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": -0.0017708311478296915,
+        "36:pathmnist": -0.0006481478611628215,
+        "6:breastmnist": -0.00027777800957361855,
+        "6:octmnist": -0.002638888524638282
+      }
+    },
+    "support_query_shuffle": {
+      "split": {
+        "36": {
+          "ci_high": 0.007812512439365187,
+          "ci_low": -0.023904301975336342,
+          "mean": -0.007897361781862048,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.008333344264990755,
+          "ci_low": -0.004374987797604667,
+          "mean": 0.0023611223532093895,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.0017361227009031507,
+        "36:pathmnist": -0.017530846264627246,
+        "6:breastmnist": 0.0009722348716523912,
+        "6:octmnist": 0.003750009834766388
+      }
+    },
+    "wrong_support_task": {
+      "split": {
+        "36": {
+          "ci_high": 0.007882389913623526,
+          "ci_low": -0.024336400288674565,
+          "mean": -0.007964878073996968,
+          "n": 360
+        },
+        "6": {
+          "ci_high": 0.007777787649797069,
+          "ci_low": -0.0049305409213735,
+          "mean": 0.0015972334891557693,
+          "n": 360
+        }
+      },
+      "task_means": {
+        "36:bloodmnist": 0.0019097324046823713,
+        "36:pathmnist": -0.017839488552676308,
+        "6:breastmnist": -0.0013888754778438143,
+        "6:octmnist": 0.004583342456155353
+      }
+    }
+  },
+  "runtime_git_sha": "82ced995af7ce41b0d45f1be3df9ea39efb0e948",
+  "schema_validation": "VALID",
+  "schema_version": 1,
+  "test_count": 38,
+  "thresholds": {
+    "each_split_hierarchical_ci_low_gt": 0.0,
+    "each_split_mean_delta_gt": 0.0,
+    "minimum_positive_task_count": 3,
+    "required_primary_comparisons": [
+      "random_expected",
+      "query_only_weighting",
+      "support_query_shuffle",
+      "support_label_removal"
+    ]
+  }
+}

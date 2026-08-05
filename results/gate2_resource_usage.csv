@@ -1,0 +1,15 @@
+record_type,split_seed,train_seed,total_parameters,trainable_parameters,activated_parameters_per_query,approximate_adapter_flops_per_query,expert_bank_size,router_parameters,wall_seconds_train_and_reference,gpu_hours_train_and_reference,peak_gpu_memory_bytes,gpu_name,method,activated_expert_paths_per_query,mean_episode_wall_seconds_shared_evaluator,hyperparameter_trials
+expert_bank,6.0,2.0,11291200.0,114688.0,11192896.0,32768,7.0,0,31.020101629197598,0.008616694896999332,258538496.0,Quadro RTX 8000,,,,
+expert_bank,6.0,3.0,11291200.0,114688.0,11192896.0,32768,7.0,0,31.22103464975953,0.008672509624933203,258538496.0,Quadro RTX 8000,,,,
+expert_bank,6.0,4.0,11291200.0,114688.0,11192896.0,32768,7.0,0,43.45301776379347,0.012070282712164853,258538496.0,Quadro RTX 8000,,,,
+expert_bank,36.0,2.0,11291200.0,114688.0,11192896.0,32768,7.0,0,38.83400374278426,0.010787223261884518,326564864.0,Quadro RTX 8000,,,,
+expert_bank,36.0,3.0,11291200.0,114688.0,11192896.0,32768,7.0,0,30.828006152063608,0.00856333504223989,326564864.0,Quadro RTX 8000,,,,
+expert_bank,36.0,4.0,11291200.0,114688.0,11192896.0,32768,7.0,0,30.302500318735838,0.008417361199648844,326564864.0,Quadro RTX 8000,,,,
+method,,,,,,32768,,0,,,,,shared,1.0,0.043773496585587664,1.0
+method,,,,,,32768,,0,,,,,capacity_matched_single,1.0,0.043773496585587664,1.0
+method,,,,,,32768,,0,,,,,compute_matched_support_top1_diagnostic,1.0,0.043773496585587664,1.0
+method,,,,,,196608,,0,,,,,random_expected,6.0,0.043773496585587664,1.0
+method,,,,,,196608,,0,,,,,query_only_weighting,6.0,0.043773496585587664,1.0
+method,,,,,,196608,,0,,,,,support_prototype_weighting,6.0,0.043773496585587664,1.0
+method,,,,,,196608,,0,,,,,support_conditioned_soft_mixture,6.0,0.043773496585587664,1.0
+method,,,,,,196608,,0,,,,,shared_fallback,6.0,0.043773496585587664,1.0
