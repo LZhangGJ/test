@@ -20,7 +20,7 @@ from torch import Tensor
 from torch.nn import functional
 
 from tamoe.analysis.gate1 import feasible_query_count
-from tamoe.analysis.gate1r import EPISODE_KEYS, hierarchical_ci
+from tamoe.analysis.gate1r import EPISODE_KEYS
 from tamoe.data.feature_cache import FeatureSet, extract_or_load_features
 from tamoe.data.medmnist_dataset import MedMNISTTensorDataset, sha256_file
 from tamoe.data.medmnist_tasks import get_task
@@ -165,11 +165,45 @@ def _balanced_hierarchical_ci(
 ) -> dict[str, float | int]:
     if frame.empty or frame[value].isna().any() or frame.duplicated(levels).any():
         raise ValueError("balanced hierarchical bootstrap requires one complete value per leaf")
-    for depth in range(1, len(levels)):
-        child_counts = frame.groupby(levels[:depth], sort=True)[levels[depth]].nunique()
-        if child_counts.nunique() != 1:
-            raise ValueError("balanced hierarchical bootstrap requires equal child counts")
-    return hierarchical_ci(frame, value, levels, repeats=repeats, seed=seed)
+
+    def nested_values(group: pd.DataFrame, remaining: list[str]) -> np.ndarray:
+        if not remaining:
+            if len(group) != 1:
+                raise ValueError("balanced hierarchical bootstrap requires one value per leaf")
+            return np.asarray(float(group[value].iloc[0]), dtype=np.float64)
+        children = [
+            nested_values(child, remaining[1:])
+            for _, child in group.groupby(remaining[0], sort=True)
+        ]
+        if not children or len({child.shape for child in children}) != 1:
+            raise ValueError("balanced hierarchical bootstrap requires equal child shapes")
+        return np.stack(children)
+
+    values = nested_values(frame, levels)
+    generator = np.random.default_rng(seed)
+    estimates: list[np.ndarray] = []
+    batch_size = 500
+    reduction_axes = tuple(range(1, values.ndim + 1))
+    for start in range(0, repeats, batch_size):
+        size = min(batch_size, repeats - start)
+        indices: list[np.ndarray] = []
+        for axis, dimension in enumerate(values.shape):
+            sampled = generator.integers(
+                0,
+                dimension,
+                size=(size, *values.shape[: axis + 1]),
+            )
+            indices.append(
+                sampled.reshape((*sampled.shape, *([1] * (values.ndim - axis - 1))))
+            )
+        estimates.append(values[tuple(indices)].mean(axis=reduction_axes))
+    bootstrap = np.concatenate(estimates)
+    return {
+        "mean": float(values.mean()),
+        "ci_low": float(np.quantile(bootstrap, 0.025)),
+        "ci_high": float(np.quantile(bootstrap, 0.975)),
+        "n": int(values.size),
+    }
 
 
 def _paired_frame(frame: pd.DataFrame, method: str, baseline: str) -> pd.DataFrame:

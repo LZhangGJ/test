@@ -124,7 +124,7 @@ def test_support_risk_episode_uses_exact_episode_and_reports_every_holdout() -> 
     assert all(0 <= row["accuracy"] <= 1 for row in rows)
 
 
-def test_balanced_hierarchical_wrapper_reuses_canonical_bootstrap() -> None:
+def test_batched_hierarchical_bootstrap_matches_recursive_distribution() -> None:
     frame = pd.DataFrame(
         [
             {"split": split, "task": task, "episode": episode, "value": split + task + episode}
@@ -134,12 +134,19 @@ def test_balanced_hierarchical_wrapper_reuses_canonical_bootstrap() -> None:
         ]
     )
     expected = hierarchical_ci(
-        frame, "value", ["split", "task", "episode"], repeats=100, seed=9
+        frame, "value", ["split", "task", "episode"], repeats=2000, seed=9
     )
     actual = RUNNER["_balanced_hierarchical_ci"](
-        frame, "value", ["split", "task", "episode"], repeats=100, seed=9
+        frame, "value", ["split", "task", "episode"], repeats=2000, seed=9
     )
-    assert actual == expected
+    repeated = RUNNER["_balanced_hierarchical_ci"](
+        frame, "value", ["split", "task", "episode"], repeats=2000, seed=9
+    )
+    assert actual == repeated
+    assert actual["mean"] == expected["mean"]
+    assert actual["n"] == expected["n"]
+    assert actual["ci_low"] == pytest.approx(expected["ci_low"], abs=0.15)
+    assert actual["ci_high"] == pytest.approx(expected["ci_high"], abs=0.15)
     with pytest.raises(ValueError, match="balanced hierarchical"):
         RUNNER["_balanced_hierarchical_ci"](
             frame.iloc[:-1], "value", ["split", "task", "episode"], repeats=10, seed=9
