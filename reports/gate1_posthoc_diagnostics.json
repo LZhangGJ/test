@@ -1,0 +1,480 @@
+{
+  "analysis": "M3A_posthoc_methodology_audit",
+  "analysis_only_query_label_derived": [
+    "episode_oracle",
+    "oracle_mixture",
+    "sample_oracle",
+    "forced_worst",
+    "swap",
+    "mask_most_used",
+    "permuted_task_assignment",
+    "leave_one_expert_out",
+    "global_most_used_conditional",
+    "task_modal_conditional"
+  ],
+  "bootstrap_repeats": 10000,
+  "canonical_decision_original": "FAIL",
+  "canonical_decision_unchanged": true,
+  "canonical_experiment_id": "M3_GATE1_CANONICAL_20260805T070831Z",
+  "conditional_mask_summary": {
+    "global": {
+      "conditional_episode_count": 23,
+      "task_split_ci_low_above_zero_count": 1,
+      "task_split_count": 6,
+      "weighted_mean_accuracy_drop": 0.01136637770611307
+    },
+    "task_modal": {
+      "conditional_episode_count": 36,
+      "task_split_ci_low_above_zero_count": 5,
+      "task_split_count": 6,
+      "weighted_mean_accuracy_drop": 0.011830322444438934
+    }
+  },
+  "fresh_split_results_used": false,
+  "hard_vs_soft_mixture": {
+    "hard_oracle_minus_mixture_loss": {
+      "ci_high": 0.11485741261944726,
+      "ci_low": 0.07684038981657337,
+      "mean": 0.09486476911438836,
+      "n": 108,
+      "std": 0.10123412978385456
+    },
+    "mixture_accuracy_tie_rate": 0.14814814814814814,
+    "mixture_accuracy_win_rate": 0.027777777777777776,
+    "mixture_minus_hard_oracle_accuracy": {
+      "ci_high": -0.020543206431385543,
+      "ci_low": -0.02981424049853727,
+      "mean": -0.024960787483939418,
+      "n": 108,
+      "std": 0.024545357298904724
+    }
+  },
+  "leave_one_out_summary": {
+    "ci_low_above_zero_count": 10,
+    "maximum_mean_accuracy_drop": 0.01111111044883728,
+    "median_mean_accuracy_drop": 0.0013888879782623714,
+    "task_split_expert_count": 42
+  },
+  "m4_authorized": false,
+  "mask_semantics": {
+    "conditional_mask_semantics": "Restrict to episodes where the masked expert was the stored canonical episode oracle; then use query-label accuracy, loss, and method name as descending/ascending/ascending tie-breaks to choose the best remaining expert.",
+    "global_most_used_expert": "shared",
+    "task_modal_experts": {
+      "0:pneumoniamnist": "shared",
+      "0:tissuemnist": "single",
+      "1:dermamnist": "single",
+      "1:organamnist": "source_octmnist",
+      "1:organcmnist": "source_pneumoniamnist",
+      "1:organsmnist": "source_pneumoniamnist"
+    }
+  },
+  "multilevel_bootstrap": {
+    "random_mean": {
+      "episode_bootstrap": {
+        "ci_high": 0.0357981460393165,
+        "ci_low": 0.027899899816968374,
+        "mean": 0.031649216595623225,
+        "n": 108,
+        "std": 0.021037740727354773
+      },
+      "hierarchical_bootstrap": {
+        "ci_high": 0.05155403565253235,
+        "ci_low": 0.0244548740499239,
+        "episode_count": 108,
+        "mean": 0.031649216595623225,
+        "split_count": 2,
+        "task_cluster_count": 6,
+        "train_seed_cluster_count": 12
+      },
+      "split_cluster": {
+        "ci_high": 0.04095485901667013,
+        "ci_low": 0.026996395385099778,
+        "cluster_count": 2,
+        "episode_count": 108,
+        "mean": 0.031649216595623225
+      },
+      "task_cluster": {
+        "ci_high": 0.04099948945696708,
+        "ci_low": 0.02485786611559214,
+        "cluster_count": 6,
+        "episode_count": 108,
+        "mean": 0.031649216595623225
+      },
+      "train_seed_cluster": {
+        "ci_high": 0.03923376542964467,
+        "ci_low": 0.02610726831101433,
+        "cluster_count": 12,
+        "episode_count": 108,
+        "mean": 0.031649216595623225
+      }
+    },
+    "shared": {
+      "episode_bootstrap": {
+        "ci_high": 0.0358422211923257,
+        "ci_low": 0.024275815793899477,
+        "mean": 0.029794352887957183,
+        "n": 108,
+        "std": 0.03062464971754448
+      },
+      "hierarchical_bootstrap": {
+        "ci_high": 0.04748481201111439,
+        "ci_low": 0.02213889258241074,
+        "episode_count": 108,
+        "mean": 0.029794352887957183,
+        "split_count": 2,
+        "task_cluster_count": 6,
+        "train_seed_cluster_count": 12
+      },
+      "split_cluster": {
+        "ci_high": 0.03749999817874697,
+        "ci_low": 0.025941530242562294,
+        "cluster_count": 2,
+        "episode_count": 108,
+        "mean": 0.029794352887957183
+      },
+      "task_cluster": {
+        "ci_high": 0.03773148137110251,
+        "ci_low": 0.0245123662882381,
+        "cluster_count": 6,
+        "episode_count": 108,
+        "mean": 0.029794352887957183
+      },
+      "train_seed_cluster": {
+        "ci_high": 0.03643462516505409,
+        "ci_low": 0.024278513711221795,
+        "cluster_count": 12,
+        "episode_count": 108,
+        "mean": 0.029794352887957183
+      }
+    },
+    "single": {
+      "episode_bootstrap": {
+        "ci_high": 0.03718680387224864,
+        "ci_low": 0.02632385440239752,
+        "mean": 0.03166328839681767,
+        "n": 108,
+        "std": 0.028677625460242974
+      },
+      "hierarchical_bootstrap": {
+        "ci_high": 0.04826388991851774,
+        "ci_low": 0.020219782322507214,
+        "episode_count": 108,
+        "mean": 0.03166328839681767,
+        "split_count": 2,
+        "task_cluster_count": 6,
+        "train_seed_cluster_count": 12
+      },
+      "split_cluster": {
+        "ci_high": 0.034722222222222224,
+        "ci_low": 0.03013382148411539,
+        "cluster_count": 2,
+        "episode_count": 108,
+        "mean": 0.03166328839681767
+      },
+      "task_cluster": {
+        "ci_high": 0.04130133682930911,
+        "ci_low": 0.022922536151276693,
+        "cluster_count": 6,
+        "episode_count": 108,
+        "mean": 0.03166328839681767
+      },
+      "train_seed_cluster": {
+        "ci_high": 0.04031272415347673,
+        "ci_low": 0.02369501825629009,
+        "cluster_count": 12,
+        "episode_count": 108,
+        "mean": 0.03166328839681767
+      }
+    }
+  },
+  "pairwise_summary": {
+    "accuracy_ci_excludes_zero_count": 30,
+    "mean_accuracy_tie_rate": 0.09656084656084656,
+    "task_split_pair_count": 126
+  },
+  "ranking_stability_summary": {
+    "mean_level_modal_consistency": 0.611111111111111,
+    "mean_pairwise_spearman": 0.2621638548224532,
+    "minimum_pairwise_spearman": -0.7142857142857144
+  },
+  "schema_version": 1,
+  "source_sha256": {
+    "expert_task_matrix.csv": "5f729762cec976f19bbbaad4e32533f144467c603e7c7e06453bfc0d5a8ec190",
+    "gate1_decision.json": "9f55f5caea46247cd92f6da268795e20d94c363134c5a1e29bf810936465db16",
+    "gate1_episode_metrics.parquet": "1ddf550772924d684f9f66bfcc96ff1ee4d4f0df7a9dadfc1d60f92669a8bc59"
+  },
+  "task_effect_summary": {
+    "random_mean": {
+      "ci_low_above_zero_task_count": 6,
+      "maximum_mean_accuracy_advantage": 0.053611109157403324,
+      "minimum_mean_accuracy_advantage": 0.020580807576576862,
+      "positive_mean_task_count": 6,
+      "task_count": 6
+    },
+    "shared": {
+      "ci_low_above_zero_task_count": 6,
+      "maximum_mean_accuracy_advantage": 0.04861111111111111,
+      "minimum_mean_accuracy_advantage": 0.02272727092107137,
+      "positive_mean_task_count": 6,
+      "task_count": 6
+    },
+    "single": {
+      "ci_low_above_zero_task_count": 6,
+      "maximum_mean_accuracy_advantage": 0.05000000364250607,
+      "minimum_mean_accuracy_advantage": 0.019444440801938374,
+      "positive_mean_task_count": 6,
+      "task_count": 6
+    }
+  },
+  "task_level_effects": [
+    {
+      "accuracy_ci_high": 0.07499999801317851,
+      "accuracy_ci_low": 0.024999989403618708,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": 0.03937121588322851,
+      "loss_ci_low": -0.025520135710636774,
+      "mean_accuracy_advantage": 0.04861111111111111,
+      "mean_loss_advantage": 0.012536926401986016,
+      "split_seed": 0,
+      "task": "pneumoniamnist"
+    },
+    {
+      "accuracy_ci_high": 0.07083334194289313,
+      "accuracy_ci_low": 0.03055556776622931,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.07290205400851037,
+      "loss_ci_low": -0.004573918258150418,
+      "mean_accuracy_advantage": 0.05000000364250607,
+      "mean_loss_advantage": 0.030830585294299655,
+      "split_seed": 0,
+      "task": "pneumoniamnist"
+    },
+    {
+      "accuracy_ci_high": 0.07111111053989995,
+      "accuracy_ci_low": 0.03791318571815889,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.07029589059452214,
+      "loss_ci_low": 0.005180361179841885,
+      "mean_accuracy_advantage": 0.053611109157403324,
+      "mean_loss_advantage": 0.03482310722271601,
+      "split_seed": 0,
+      "task": "pneumoniamnist"
+    },
+    {
+      "accuracy_ci_high": 0.03576388623979357,
+      "accuracy_ci_low": 0.01736110614405738,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": 0.020725654065608973,
+      "loss_ci_low": -0.014928154978487226,
+      "mean_accuracy_advantage": 0.026388885246382818,
+      "mean_loss_advantage": 0.0032452940940856934,
+      "split_seed": 0,
+      "task": "tissuemnist"
+    },
+    {
+      "accuracy_ci_high": 0.029513884749677446,
+      "accuracy_ci_low": 0.010416665010982089,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.019801893002457088,
+      "loss_ci_low": -0.016274765796131557,
+      "mean_accuracy_advantage": 0.019444440801938374,
+      "mean_loss_advantage": 0.00012264649073282877,
+      "split_seed": 0,
+      "task": "tissuemnist"
+    },
+    {
+      "accuracy_ci_high": 0.03416666224805845,
+      "accuracy_ci_low": 0.023020832155727686,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.06158625720275761,
+      "loss_ci_low": 2.4495141373686366e-05,
+      "mean_accuracy_advantage": 0.02829860887593693,
+      "mean_loss_advantage": 0.030136856105592455,
+      "split_seed": 0,
+      "task": "tissuemnist"
+    },
+    {
+      "accuracy_ci_high": 0.0398792225660549,
+      "accuracy_ci_low": 0.019292801970409022,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": 0.01936916957298914,
+      "loss_ci_low": -0.01761669566233953,
+      "mean_accuracy_advantage": 0.029018645485242207,
+      "mean_loss_advantage": 0.0017350514729817708,
+      "split_seed": 1,
+      "task": "dermamnist"
+    },
+    {
+      "accuracy_ci_high": 0.02926446505718761,
+      "accuracy_ci_low": 0.011211418029334811,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.027478779190116445,
+      "loss_ci_low": -0.010705802506870693,
+      "mean_accuracy_advantage": 0.020030236906475492,
+      "mean_loss_advantage": 0.007220804691314697,
+      "split_seed": 1,
+      "task": "dermamnist"
+    },
+    {
+      "accuracy_ci_high": 0.03469021241077118,
+      "accuracy_ci_low": 0.022947818051195806,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.02166927874088287,
+      "loss_ci_low": -0.018243575692176824,
+      "mean_accuracy_advantage": 0.028566391517718632,
+      "mean_loss_advantage": 0.0034208582507239374,
+      "split_seed": 1,
+      "task": "dermamnist"
+    },
+    {
+      "accuracy_ci_high": 0.030555561184883118,
+      "accuracy_ci_low": 0.01590908562971486,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": 0.009651159909036424,
+      "loss_ci_low": -0.07130651010407342,
+      "mean_accuracy_advantage": 0.02272727092107137,
+      "mean_loss_advantage": -0.027765982680850558,
+      "split_seed": 1,
+      "task": "organamnist"
+    },
+    {
+      "accuracy_ci_high": 0.029545457826720342,
+      "accuracy_ci_low": 0.015909097260899015,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.08923387163215213,
+      "loss_ci_low": -0.042156605422496794,
+      "mean_accuracy_advantage": 0.022727275888125103,
+      "mean_loss_advantage": 0.02400167120827569,
+      "split_seed": 1,
+      "task": "organamnist"
+    },
+    {
+      "accuracy_ci_high": 0.024267678722325294,
+      "accuracy_ci_low": 0.016843431852757926,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.045953148669666696,
+      "loss_ci_low": -0.039860629455910776,
+      "mean_accuracy_advantage": 0.020580807576576862,
+      "mean_loss_advantage": 0.005920600891113274,
+      "split_seed": 1,
+      "task": "organamnist"
+    },
+    {
+      "accuracy_ci_high": 0.040909091652267505,
+      "accuracy_ci_low": 0.017171714848114385,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": -0.00448073181841109,
+      "loss_ci_low": -0.11679253180821736,
+      "mean_accuracy_advantage": 0.028535350329346128,
+      "mean_loss_advantage": -0.060739590062035456,
+      "split_seed": 1,
+      "task": "organcmnist"
+    },
+    {
+      "accuracy_ci_high": 0.053030303803582986,
+      "accuracy_ci_low": 0.03080807626247406,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.056625019345018596,
+      "loss_ci_low": -0.09884506281879213,
+      "mean_accuracy_advantage": 0.04191918753915363,
+      "mean_loss_advantage": -0.02225531472100152,
+      "split_seed": 1,
+      "task": "organcmnist"
+    },
+    {
+      "accuracy_ci_high": 0.040328280300729796,
+      "accuracy_ci_low": 0.025909089410884507,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.03675445020198821,
+      "loss_ci_low": -0.07389325795902149,
+      "mean_accuracy_advantage": 0.03287878558039665,
+      "mean_loss_advantage": -0.01707968513170878,
+      "split_seed": 1,
+      "task": "organcmnist"
+    },
+    {
+      "accuracy_ci_high": 0.03156566040383445,
+      "accuracy_ci_low": 0.015909097260899015,
+      "baseline": "shared",
+      "episode_count": 18,
+      "loss_ci_high": 0.021331458952691812,
+      "loss_ci_low": -0.046579224367936455,
+      "mean_accuracy_advantage": 0.023484854234589472,
+      "mean_loss_advantage": -0.012001620398627387,
+      "split_seed": 1,
+      "task": "organsmnist"
+    },
+    {
+      "accuracy_ci_high": 0.046717176027595994,
+      "accuracy_ci_low": 0.024999995198514726,
+      "baseline": "single",
+      "episode_count": 18,
+      "loss_ci_high": 0.07731898145543203,
+      "loss_ci_low": -0.0401591549317042,
+      "mean_accuracy_advantage": 0.035858585602707334,
+      "mean_loss_advantage": 0.015936116377512615,
+      "split_seed": 1,
+      "task": "organsmnist"
+    },
+    {
+      "accuracy_ci_high": 0.029191921903855264,
+      "accuracy_ci_low": 0.02287878598190016,
+      "baseline": "random_mean",
+      "episode_count": 18,
+      "loss_ci_high": 0.0361715365284019,
+      "loss_ci_low": -0.028696380472845447,
+      "mean_accuracy_advantage": 0.025959596865706973,
+      "mean_loss_advantage": 0.004699560668733412,
+      "split_seed": 1,
+      "task": "organsmnist"
+    }
+  ],
+  "tie_break_audit": {
+    "episode_count": 108,
+    "identity_diagnostic_impact": "yes",
+    "identity_mismatch_count": 13,
+    "identity_mismatch_rate": 0.12037037037037036,
+    "metric_impact": "none_on_episode_oracle_accuracy",
+    "mismatch_with_accuracy_tie_count": 13
+  },
+  "top1_top2_margins": {
+    "accuracy_margin": {
+      "ci_high": 0.017759741687526306,
+      "ci_low": 0.011941196662546309,
+      "mean": 0.014724806640987043,
+      "n": 108,
+      "std": 0.015527748889236012
+    },
+    "accuracy_margin_le_0_01_rate": 0.5277777777777778,
+    "exact_top_accuracy_tie_rate": 0.18518518518518517,
+    "loss_margin": {
+      "ci_high": 0.04634138664437665,
+      "ci_low": 0.03238319306185952,
+      "mean": 0.03917095120306368,
+      "n": 108,
+      "std": 0.03752170194354938
+    }
+  },
+  "validation": {
+    "decision_status": "FAIL",
+    "episode_count": 108,
+    "matrix_consistent": true,
+    "row_count": 2592,
+    "schema_valid": true
+  }
+}
