@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tamoe/gate1r-preregistration.schema.json",
+  "title": "Frozen Gate 1R preregistration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "protocol_status",
+    "canonical_protection",
+    "fresh_task_splits",
+    "model_and_training",
+    "episode_protocol",
+    "candidate_sets",
+    "oracle_identity",
+    "endpoints",
+    "statistics",
+    "interventions",
+    "shared_requirements",
+    "pass_hard_additional_requirements",
+    "outcome_rule",
+    "analysis_only_query_label_usage",
+    "required_result_files",
+    "decision_provenance_required",
+    "preregistration_tag",
+    "amendment_policy"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_id": {"const": "gate1r-confirmatory-v1"},
+    "protocol_status": {"const": "preregistered"},
+    "canonical_protection": {
+      "type": "object",
+      "required": [
+        "canonical_experiment_id",
+        "canonical_decision",
+        "canonical_evidence_role",
+        "m3a_commit",
+        "canonical_task_split_seeds_excluded"
+      ],
+      "properties": {
+        "canonical_experiment_id": {"const": "M3_GATE1_CANONICAL_20260805T070831Z"},
+        "canonical_decision": {"const": "FAIL"},
+        "canonical_evidence_role": {"const": "historical_exploratory_only"},
+        "m3a_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "canonical_task_split_seeds_excluded": {
+          "type": "array",
+          "prefixItems": [{"const": 0}, {"const": 1}],
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "additionalProperties": false
+    },
+    "fresh_task_splits": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["seed", "split_hash", "meta_test"],
+        "properties": {
+          "seed": {"enum": [6, 36]},
+          "split_hash": {"pattern": "^[0-9a-f]{64}$"},
+          "meta_test": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {"type": "string"}
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "model_and_training": {
+      "type": "object",
+      "required": [
+        "backbone",
+        "pretrained",
+        "feature_preprocessing",
+        "adapter_architecture",
+        "adapter_rank",
+        "training_steps",
+        "optimizer",
+        "learning_rate",
+        "checkpoint_selection_logic"
+      ]
+    },
+    "episode_protocol": {
+      "type": "object",
+      "required": [
+        "train_seeds",
+        "shots",
+        "support_resamples",
+        "query_per_class",
+        "random_repeats",
+        "bootstrap_repeats"
+      ],
+      "properties": {
+        "train_seeds": {"const": [2, 3, 4]},
+        "shots": {"const": [1, 5, 16]},
+        "support_resamples": {"const": 10},
+        "query_per_class": {"const": 20},
+        "random_repeats": {"minimum": 10},
+        "bootstrap_repeats": {"minimum": 10000}
+      }
+    },
+    "candidate_sets": {
+      "type": "object",
+      "required": [
+        "router_candidate_set",
+        "baseline_only_set",
+        "router_candidate_oracle",
+        "full_analysis_oracle",
+        "specialist_only_oracle"
+      ],
+      "properties": {
+        "router_candidate_set": {"const": ["shared", "source_*"]},
+        "baseline_only_set": {"const": ["single"]}
+      }
+    },
+    "oracle_identity": {
+      "type": "object",
+      "required": ["primary_rule", "accuracy_tie_tolerance", "epsilon_accuracy"],
+      "properties": {
+        "primary_rule": {
+          "const": [
+            "maximum_accuracy",
+            "minimum_query_nll_within_accuracy_tolerance",
+            "lexicographic_expert_name"
+          ]
+        },
+        "accuracy_tie_tolerance": {"const": 1e-12},
+        "epsilon_accuracy": {"const": 0.01}
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "required": [
+        "primary_metric",
+        "primary_paired_estimands",
+        "random_expected_definition",
+        "repeated_random_role",
+        "secondary_metrics"
+      ]
+    },
+    "statistics": {
+      "type": "object",
+      "required": [
+        "reporting_levels",
+        "ordinary_episode_bootstrap_reported",
+        "primary_inference",
+        "hierarchical_resampling_order",
+        "confidence_level",
+        "bootstrap_repeats"
+      ]
+    },
+    "interventions": {
+      "type": "object",
+      "required": [
+        "core",
+        "diagnostic_only",
+        "task_modal_definition",
+        "task_modal_swap",
+        "task_assignment_permutation",
+        "wrong_task_assignment",
+        "all_interventions_analysis_only_query_label_derived"
+      ]
+    },
+    "shared_requirements": {
+      "type": "object",
+      "required": [
+        "oracle_headroom",
+        "no_global_path_dominance",
+        "core_intervention_evidence"
+      ]
+    },
+    "pass_hard_additional_requirements": {
+      "type": "object",
+      "required": [
+        "minimum_episode_fraction_margin_gt_epsilon",
+        "margin_epsilon",
+        "minimum_tasks_modal_consistent_two_of_three_train_seeds",
+        "minimum_median_within_task_spearman",
+        "maximum_exact_accuracy_tie_rate_lt"
+      ]
+    },
+    "outcome_rule": {
+      "type": "object",
+      "required": ["allowed_outcomes", "PASS_HARD", "PASS_SOFT", "FAIL"],
+      "properties": {
+        "allowed_outcomes": {"const": ["PASS_HARD", "PASS_SOFT", "FAIL"]}
+      }
+    },
+    "analysis_only_query_label_usage": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "required_result_files": {
+      "type": "array",
+      "minItems": 9,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "decision_provenance_required": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "preregistration_tag": {"const": "gate1r-preregistered-v1"},
+    "amendment_policy": {
+      "type": "object",
+      "required": [
+        "stop_on_bug",
+        "require_amendment_document",
+        "require_impact_statement",
+        "require_new_annotated_tag",
+        "preserve_old_tag",
+        "silent_fix_forbidden"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

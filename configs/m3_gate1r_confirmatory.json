@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "protocol_id": "gate1r-confirmatory-v1",
+  "protocol_status": "preregistered",
+  "canonical_protection": {
+    "canonical_experiment_id": "M3_GATE1_CANONICAL_20260805T070831Z",
+    "canonical_decision": "FAIL",
+    "canonical_evidence_role": "historical_exploratory_only",
+    "m3a_commit": "76764f3f1cfab076b03ad06b5bc11501fa95510f",
+    "canonical_task_split_seeds_excluded": [
+      0,
+      1
+    ]
+  },
+  "fresh_task_splits": [
+    {
+      "seed": 6,
+      "split_hash": "e2aca00b68c72b67eb6f9e9b0b0c53210908312204c357e505919f129c80031b",
+      "meta_test": [
+        "breastmnist",
+        "octmnist"
+      ]
+    },
+    {
+      "seed": 36,
+      "split_hash": "9a8fb6bb52f30fdd02e16519d3013b250b7e1dcca1093a346bb8407b40125051",
+      "meta_test": [
+        "bloodmnist",
+        "pathmnist"
+      ]
+    }
+  ],
+  "model_and_training": {
+    "backbone": "resnet18",
+    "pretrained": true,
+    "backbone_weights": "IMAGENET1K_V1",
+    "feature_preprocessing": "rgb_0_1_imagenet_norm_v1",
+    "adapter_architecture": "residual_bottleneck_layernorm_gelu",
+    "adapter_rank": 16,
+    "training_steps": 200,
+    "training_shots": 5,
+    "training_queries_per_class": 5,
+    "training_n_way": 5,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "temperature": 0.1,
+    "feature_batch_size": 512,
+    "max_train_samples_per_class": 500,
+    "max_evaluation_samples_per_class": 200,
+    "checkpoint_selection_logic": "final_training_step_with_config_hash_validation"
+  },
+  "episode_protocol": {
+    "train_seeds": [
+      2,
+      3,
+      4
+    ],
+    "shots": [
+      1,
+      5,
+      16
+    ],
+    "support_resamples": 10,
+    "query_per_class": 20,
+    "query_count_policy": "min_desired_and_min_class_count_minus_shots",
+    "support_query_sampling": "disjoint_without_replacement",
+    "label_space": "episode_local_contiguous",
+    "random_repeats": 10,
+    "bootstrap_repeats": 10000
+  },
+  "candidate_sets": {
+    "router_candidate_set": [
+      "shared",
+      "source_*"
+    ],
+    "baseline_only_set": [
+      "single"
+    ],
+    "router_candidate_oracle": "shared_plus_all_source_experts",
+    "full_analysis_oracle": "shared_single_plus_all_source_experts",
+    "specialist_only_oracle": "all_source_experts_only"
+  },
+  "oracle_identity": {
+    "primary_rule": [
+      "maximum_accuracy",
+      "minimum_query_nll_within_accuracy_tolerance",
+      "lexicographic_expert_name"
+    ],
+    "accuracy_tie_tolerance": 1e-12,
+    "epsilon_accuracy": 0.01,
+    "minimum_nll_oracle_reported": true,
+    "exact_accuracy_tie_rate_reported": true,
+    "top1_top2_accuracy_margin_reported": true,
+    "epsilon_optimal_set_reported": true,
+    "identity_used_for_frequency_modal_mask_stability": "primary_accuracy_oracle"
+  },
+  "endpoints": {
+    "primary_metric": "accuracy",
+    "primary_paired_estimands": [
+      "delta_oracle_shared",
+      "delta_oracle_single",
+      "delta_oracle_random"
+    ],
+    "random_expected_definition": "exact_episode_mean_accuracy_over_router_candidate_set",
+    "repeated_random_role": "secondary_sanity_check",
+    "secondary_metrics": [
+      "macro_f1",
+      "query_nll",
+      "oracle_mixture_nll",
+      "top1_top2_accuracy_margin",
+      "epsilon_optimal_set_size",
+      "best_path_entropy",
+      "ranking_stability",
+      "leave_one_expert_out_loss",
+      "conditional_mask_loss"
+    ]
+  },
+  "statistics": {
+    "reporting_levels": [
+      "episode",
+      "task",
+      "split",
+      "train_seed",
+      "support_resample"
+    ],
+    "ordinary_episode_bootstrap_reported": true,
+    "primary_inference": "hierarchical_cluster_bootstrap",
+    "hierarchical_resampling_order": [
+      "split",
+      "task_within_split",
+      "train_seed_within_task",
+      "support_episode_within_train_seed"
+    ],
+    "per_split_bootstrap_order": [
+      "task_within_split",
+      "train_seed_within_task",
+      "support_episode_within_train_seed"
+    ],
+    "per_task_bootstrap_order": [
+      "train_seed_within_task",
+      "support_episode_within_train_seed"
+    ],
+    "confidence_level": 0.95,
+    "bootstrap_repeats": 10000
+  },
+  "interventions": {
+    "core": [
+      "forced_worst",
+      "random_expected",
+      "repeated_random",
+      "task_modal_swap",
+      "task_assignment_permutation",
+      "wrong_task_expert_assignment"
+    ],
+    "diagnostic_only": [
+      "global_most_used_mask",
+      "conditional_global_mask",
+      "task_modal_conditional_mask",
+      "leave_one_expert_out",
+      "source_expert_leave_one_out",
+      "expert_redundancy",
+      "oracle_mixture"
+    ],
+    "task_modal_definition": "modal_primary_accuracy_oracle_path_with_lexicographic_tie_break",
+    "task_modal_swap": "replace_each_task_modal_path_with_next_lexicographic_router_candidate_path",
+    "task_assignment_permutation": "within_split_cyclic_permutation_of_task_modal_paths_by_sorted_task_name",
+    "wrong_task_assignment": "modal_primary_accuracy_oracle_path_from_the_other_held_out_task_in_the_same_split",
+    "wrong_task_assignment_source": "next_sorted_held_out_task_within_split_cyclically",
+    "all_interventions_analysis_only_query_label_derived": true
+  },
+  "shared_requirements": {
+    "oracle_headroom": {
+      "each_split_delta_oracle_shared_mean_gt": 0.01,
+      "each_split_delta_oracle_single_mean_gt": 0.01,
+      "each_split_hierarchical_ci_low_gt": 0.0,
+      "minimum_positive_task_count_delta_oracle_shared": 3,
+      "minimum_positive_task_count_delta_oracle_single": 3,
+      "fresh_task_count": 4
+    },
+    "no_global_path_dominance": {
+      "maximum_primary_oracle_best_frequency_lt": 0.5,
+      "minimum_paths_with_frequency_gte": 3,
+      "path_frequency_threshold": 0.05,
+      "all_tasks_same_modal_path_allowed": false
+    },
+    "core_intervention_evidence": {
+      "forced_worst_minimum_passing_tasks": 3,
+      "random_expected_minimum_passing_tasks": 2,
+      "assignment_minimum_passing_tasks": 2,
+      "passing_task_mean_accuracy_drop_gt": 0.01,
+      "passing_task_hierarchical_ci_low_gt": 0.0,
+      "assignment_passes_if_either": [
+        "task_assignment_permutation",
+        "wrong_task_expert_assignment"
+      ],
+      "task_dependent_pattern_minimum_range_gt": 0.005,
+      "task_dependent_pattern_applies_to": [
+        "task_assignment_permutation",
+        "wrong_task_expert_assignment"
+      ]
+    }
+  },
+  "pass_hard_additional_requirements": {
+    "minimum_episode_fraction_margin_gt_epsilon": 0.5,
+    "margin_epsilon": 0.01,
+    "minimum_tasks_modal_consistent_two_of_three_train_seeds": 3,
+    "fresh_task_count": 4,
+    "minimum_median_within_task_spearman": 0.3,
+    "maximum_exact_accuracy_tie_rate_lt": 0.2
+  },
+  "outcome_rule": {
+    "allowed_outcomes": [
+      "PASS_HARD",
+      "PASS_SOFT",
+      "FAIL"
+    ],
+    "PASS_HARD": "all_shared_requirements_and_all_pass_hard_additional_requirements",
+    "PASS_SOFT": "all_shared_requirements_and_not_all_pass_hard_additional_requirements",
+    "FAIL": "any_shared_requirement_failed"
+  },
+  "analysis_only_query_label_usage": [
+    "router_candidate_oracle",
+    "full_analysis_oracle",
+    "specialist_only_oracle",
+    "minimum_nll_oracle",
+    "oracle_mixture",
+    "sample_oracle",
+    "forced_worst",
+    "task_modal_swap",
+    "task_assignment_permutation",
+    "wrong_task_expert_assignment",
+    "global_most_used_mask",
+    "conditional_global_mask",
+    "task_modal_conditional_mask",
+    "leave_one_expert_out",
+    "source_expert_leave_one_out"
+  ],
+  "required_result_files": [
+    "reports/gate1r_report.md",
+    "reports/gate1r_decision.json",
+    "results/gate1r_episode_metrics.parquet",
+    "results/gate1r_expert_task_matrix.csv",
+    "results/gate1r_intervention_effects.csv",
+    "results/gate1r_ranking_stability.csv",
+    "results/gate1r_epsilon_optimal_sets.csv",
+    "results/gate1r_leave_one_expert_out.csv",
+    "results/gate1r_resource_usage.csv"
+  ],
+  "decision_provenance_required": [
+    "preregistration_commit_sha",
+    "preregistration_tag",
+    "runtime_git_sha",
+    "working_tree_clean",
+    "task_split_hashes",
+    "config_hash",
+    "host_gpu",
+    "elapsed_time",
+    "gpu_hours",
+    "test_count",
+    "schema_version"
+  ],
+  "preregistration_tag": "gate1r-preregistered-v1",
+  "amendment_policy": {
+    "stop_on_bug": true,
+    "require_amendment_document": true,
+    "require_impact_statement": true,
+    "require_new_annotated_tag": true,
+    "preserve_old_tag": true,
+    "silent_fix_forbidden": true
+  }
+}

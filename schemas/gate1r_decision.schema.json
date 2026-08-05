@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tamoe/gate1r-decision.schema.json",
+  "title": "Gate 1R confirmatory decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "outcome",
+    "criteria",
+    "raw_criterion_values",
+    "thresholds",
+    "candidate_sets",
+    "identity_rules",
+    "preregistration_commit_sha",
+    "preregistration_tag",
+    "runtime_git_sha",
+    "working_tree_clean",
+    "task_split_hashes",
+    "config_hash",
+    "host_gpu",
+    "elapsed_time",
+    "gpu_hours",
+    "test_count"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "outcome": {"enum": ["PASS_HARD", "PASS_SOFT", "FAIL"]},
+    "criteria": {
+      "type": "object",
+      "required": ["shared_requirements", "pass_hard_additional_requirements"],
+      "properties": {
+        "shared_requirements": {"type": "object", "additionalProperties": {"type": "boolean"}},
+        "pass_hard_additional_requirements": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_criterion_values": {"type": "object"},
+    "thresholds": {"type": "object"},
+    "candidate_sets": {"type": "object"},
+    "identity_rules": {"type": "object"},
+    "preregistration_commit_sha": {"pattern": "^[0-9a-f]{40}$"},
+    "preregistration_tag": {"const": "gate1r-preregistered-v1"},
+    "runtime_git_sha": {"pattern": "^[0-9a-f]{40}$"},
+    "working_tree_clean": {"const": true},
+    "task_split_hashes": {
+      "type": "object",
+      "required": ["6", "36"],
+      "properties": {
+        "6": {"const": "e2aca00b68c72b67eb6f9e9b0b0c53210908312204c357e505919f129c80031b"},
+        "36": {"const": "9a8fb6bb52f30fdd02e16519d3013b250b7e1dcca1093a346bb8407b40125051"}
+      },
+      "additionalProperties": false
+    },
+    "config_hash": {"pattern": "^[0-9a-f]{64}$"},
+    "host_gpu": {
+      "type": "object",
+      "required": ["host", "device", "gpu_name"],
+      "properties": {
+        "host": {"type": "string", "minLength": 1},
+        "device": {"type": "string", "minLength": 1},
+        "gpu_name": {"type": "string", "minLength": 1}
+      }
+    },
+    "elapsed_time": {"type": "number", "minimum": 0},
+    "gpu_hours": {"type": "number", "minimum": 0},
+    "test_count": {"type": "integer", "minimum": 1}
+  },
+  "additionalProperties": true
+}
