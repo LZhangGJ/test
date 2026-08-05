@@ -1,0 +1,36 @@
+{
+  "backbone": {
+    "embedding_dim": 512,
+    "name": "resnet18",
+    "preprocess_version": "rgb_0_1_imagenet_norm_v1",
+    "weights": "IMAGENET1K_V1"
+  },
+  "checkpoint": "runs\\m2_smoke\\expert.pt",
+  "device": "cpu",
+  "elapsed_seconds": 0.3722517999995034,
+  "experiment_id": "M2_SMOKE",
+  "feature_cache_key": "11c994b70bf90665b8a4ba50b3cd8f384fb6883312019d6f411317c6c42efd3e",
+  "feature_shape": [
+    100,
+    512
+  ],
+  "loaded_config_hash": "7ef75347ebcd18456dca125db1d9059e750da24ebad4ad9c6a6cefaeacf219cc",
+  "resource_counts": {
+    "activated_parameters_per_query": 11192896,
+    "approximate_adapter_flops_per_query": 32768,
+    "expert_bank_size": 1,
+    "total_parameters": 11192896,
+    "trainable_parameters": 16384
+  },
+  "schema_version": 1,
+  "status": "SUCCEEDED",
+  "train_result": {
+    "checkpoint": "runs\\m2_smoke\\expert.pt",
+    "config_hash": "7ef75347ebcd18456dca125db1d9059e750da24ebad4ad9c6a6cefaeacf219cc",
+    "final_accuracy": 0.75,
+    "final_loss": 0.4559146761894226,
+    "final_step": 10,
+    "resumed": false,
+    "start_step": 0
+  }
+}

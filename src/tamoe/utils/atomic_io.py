@@ -30,3 +30,22 @@ def atomic_write_text(path: Path, content: str) -> None:
 
 def atomic_write_json(path: Path, payload: Any) -> None:
     atomic_write_text(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+
+def atomic_torch_save(path: Path, payload: Any) -> None:
+    """Atomically save a PyTorch payload without leaving partial checkpoints."""
+
+    import torch
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(
+        dir=path.parent, prefix=f".{path.name}.", suffix=".tmp"
+    )
+    os.close(descriptor)
+    temporary_path = Path(temporary_name)
+    try:
+        torch.save(payload, temporary_path)
+        os.replace(temporary_path, path)
+    except BaseException:
+        temporary_path.unlink(missing_ok=True)
+        raise

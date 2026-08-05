@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Sequence
 
 import numpy as np
 import torch
@@ -108,7 +108,9 @@ def prepare_task(task_key: str, root: Path, *, size: int = 28) -> list[PreparedD
                 split=split,
                 size=size,
                 sample_count=len(labels),
-                label_counts={int(label): int(count) for label, count in zip(unique, counts)},
+                label_counts={
+                    int(label): int(count) for label, count in zip(unique, counts, strict=True)
+                },
                 source_file=str(source_file),
                 source_sha256=sha256_file(source_file),
             )

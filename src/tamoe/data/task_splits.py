@@ -29,7 +29,9 @@ class TaskSplit:
 
     def validate(self) -> None:
         task_sets = [set(self.meta_train), set(self.meta_validation), set(self.meta_test)]
-        if any(left & right for index, left in enumerate(task_sets) for right in task_sets[index + 1 :]):
+        if any(
+            left & right for index, left in enumerate(task_sets) for right in task_sets[index + 1 :]
+        ):
             raise ValueError("task meta-splits overlap")
         group_sets = [
             set(self.meta_train_groups),

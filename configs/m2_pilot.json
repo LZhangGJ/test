@@ -1,0 +1,22 @@
+{
+  "backbone": "resnet18",
+  "pretrained": true,
+  "adapter_rank": 16,
+  "training_steps": 200,
+  "training_shots": 5,
+  "training_queries_per_class": 5,
+  "training_n_way": 5,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "temperature": 0.1,
+  "feature_batch_size": 512,
+  "max_train_samples_per_class": 500,
+  "max_evaluation_samples_per_class": 200,
+  "task_split_seeds": [0, 1],
+  "train_seeds": [0, 1],
+  "evaluation_shots": [1, 5, 16],
+  "support_resamples": 3,
+  "query_per_class": 20,
+  "random_router_repeats": 10,
+  "bootstrap_repeats": 1000
+}
