@@ -113,7 +113,23 @@ def _report(decision: dict[str, Any], *, metadata: dict[str, Any], frame: pd.Dat
                 f"[{record['ci_low']:.4f}, {record['ci_high']:.4f}] | {record['n']} |"
             )
     if decision["status"] == "FAIL":
+        failed = [name for name, passed in decision["criteria"].items() if not passed]
+        mask_effects = [
+            record for record in decision["intervention_effects"]
+            if record["intervention"] == "mask_most_used"
+        ]
+        maximum_mask_effect = max(record["mean"] for record in mask_effects)
         lines.extend([
+            "", "## Negative-result diagnosis", "",
+            f"- Failed criteria: `{failed}`.",
+            f"- The largest task/split mean loss from masking the globally most-used expert was "
+            f"`{maximum_mask_effect:.4f}`, below the preregistered "
+            f"`{decision['thresholds']['minimum_accuracy_gap']:.4f}` material-effect threshold.",
+            f"- Consequently, `{decision['passing_intervention_task_split_count']}` task/split "
+            "groups passed the complete forced-worst/random/swap/mask/permutation intervention suite; "
+            f"at least `{decision['thresholds']['minimum_intervention_task_split_count']}` were required.",
+            "- The positive oracle gap supports expert diversity, but this pilot does not support the "
+            "full preregistered causal-intervention claim needed to justify learned routing.",
             "", "## Stop decision", "",
             "Gate 1 did not satisfy every preregistered criterion. Learned routing development "
             "is stopped; this report preserves the negative pilot rather than adding router complexity.",

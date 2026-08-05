@@ -1,0 +1,530 @@
+{
+  "analysis_only_query_label_use": [
+    "episode_oracle",
+    "oracle_mixture",
+    "sample_oracle",
+    "forced_worst"
+  ],
+  "best_expert_frequencies": {
+    "shared": 0.21296296296296297,
+    "single": 0.1574074074074074,
+    "source_breastmnist": 0.10185185185185185,
+    "source_dermamnist": 0.027777777777777776,
+    "source_octmnist": 0.1388888888888889,
+    "source_organmnist": 0.027777777777777776,
+    "source_pathmnist": 0.1111111111111111,
+    "source_pneumoniamnist": 0.1574074074074074,
+    "source_tissuemnist": 0.06481481481481481
+  },
+  "criteria": {
+    "multiple_task_split_oracle_gap": true,
+    "no_global_expert_dominance": true,
+    "stable_split_oracle_gap": true,
+    "task_specific_intervention_effects": false
+  },
+  "intervention_effects": [
+    {
+      "ci_high": 0.14586806440105038,
+      "ci_low": 0.09163193044563135,
+      "intervention": "forced_worst",
+      "mean": 0.11805555472771327,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.061718980741102075,
+      "task": "pneumoniamnist"
+    },
+    {
+      "ci_high": 0.07070138995846113,
+      "ci_low": 0.03777777584890527,
+      "intervention": "random_mean",
+      "mean": 0.053611109157403324,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.037211862847947516,
+      "task": "pneumoniamnist"
+    },
+    {
+      "ci_high": 0.0666666759385003,
+      "ci_low": 0.03194445023934047,
+      "intervention": "swap",
+      "mean": 0.04861111773384942,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.039734617383803156,
+      "task": "pneumoniamnist"
+    },
+    {
+      "ci_high": 0.006944437821706136,
+      "ci_low": 0.0,
+      "intervention": "mask_most_used",
+      "mean": 0.0027777751286824546,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.008084513124544552,
+      "task": "pneumoniamnist"
+    },
+    {
+      "ci_high": 0.07086806719501809,
+      "ci_low": 0.03194444709353977,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.05000000364250607,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.044556643171724815,
+      "task": "pneumoniamnist"
+    },
+    {
+      "ci_high": 0.06423610450906886,
+      "ci_low": 0.049652778398659496,
+      "intervention": "forced_worst",
+      "mean": 0.05694444146421221,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.01645080636880043,
+      "task": "tissuemnist"
+    },
+    {
+      "ci_high": 0.03395833044830295,
+      "ci_low": 0.02260329588626822,
+      "intervention": "random_mean",
+      "mean": 0.02829860887593693,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.01254917582774017,
+      "task": "tissuemnist"
+    },
+    {
+      "ci_high": 0.03611110897941722,
+      "ci_low": 0.014236108255055216,
+      "intervention": "swap",
+      "mean": 0.023958330353101093,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.025022968266891044,
+      "task": "tissuemnist"
+    },
+    {
+      "ci_high": 0.0048611090001132755,
+      "ci_low": 0.0006857632348934814,
+      "intervention": "mask_most_used",
+      "mean": 0.0024305548932817248,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.004859650973161697,
+      "task": "tissuemnist"
+    },
+    {
+      "ci_high": 0.029166662051445906,
+      "ci_low": 0.01076388851635986,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.019444440801938374,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.02142540741886314,
+      "task": "tissuemnist"
+    },
+    {
+      "ci_high": 0.06894054104470544,
+      "ci_low": 0.05222269725054502,
+      "intervention": "forced_worst",
+      "mean": 0.06061351050933202,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.019540415915358114,
+      "task": "dermamnist"
+    },
+    {
+      "ci_high": 0.034867868934654524,
+      "ci_low": 0.022738240814457338,
+      "intervention": "random_mean",
+      "mean": 0.028566391517718632,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.013110899830995188,
+      "task": "dermamnist"
+    },
+    {
+      "ci_high": 0.04586388315591546,
+      "ci_low": 0.025042834629615148,
+      "intervention": "swap",
+      "mean": 0.03537415133582221,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.022089422283757782,
+      "task": "dermamnist"
+    },
+    {
+      "ci_high": 0.00317460298538208,
+      "ci_low": 0.0,
+      "intervention": "mask_most_used",
+      "mean": 0.0012345678276485866,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.0037544868848364108,
+      "task": "dermamnist"
+    },
+    {
+      "ci_high": 0.03595002214941713,
+      "ci_low": 0.016954211704432964,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.025995215608014002,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.021911066417521878,
+      "task": "dermamnist"
+    },
+    {
+      "ci_high": 0.051521476482351614,
+      "ci_low": 0.04015151407155726,
+      "intervention": "forced_worst",
+      "mean": 0.04595959931612015,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.012558947778141875,
+      "task": "organamnist"
+    },
+    {
+      "ci_high": 0.02444634467984237,
+      "ci_low": 0.0168680514043404,
+      "intervention": "random_mean",
+      "mean": 0.020580807576576862,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.008354984281998481,
+      "task": "organamnist"
+    },
+    {
+      "ci_high": 0.023989894323878817,
+      "ci_low": 0.01136363877190484,
+      "intervention": "swap",
+      "mean": 0.01742424236403571,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.014728952185011761,
+      "task": "organamnist"
+    },
+    {
+      "ci_high": 0.0007575750350952148,
+      "ci_low": 0.0,
+      "intervention": "mask_most_used",
+      "mean": 0.00025252501169840497,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.0010713728891469263,
+      "task": "organamnist"
+    },
+    {
+      "ci_high": 0.016414148981372518,
+      "ci_low": 0.004797981803615888,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.010101012057728238,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.013280162679322588,
+      "task": "organamnist"
+    },
+    {
+      "ci_high": 0.07550504725012513,
+      "ci_low": 0.057575753103527756,
+      "intervention": "forced_worst",
+      "mean": 0.06641413850916757,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.01960592042250159,
+      "task": "organcmnist"
+    },
+    {
+      "ci_high": 0.0402537865543531,
+      "ci_low": 0.025929921534326338,
+      "intervention": "random_mean",
+      "mean": 0.03287878558039665,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.01594000173358859,
+      "task": "organcmnist"
+    },
+    {
+      "ci_high": 0.051268939259979454,
+      "ci_low": 0.029292926171587574,
+      "intervention": "swap",
+      "mean": 0.040404038296805486,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.02434803281802659,
+      "task": "organcmnist"
+    },
+    {
+      "ci_high": 0.014393938912285699,
+      "ci_low": 0.0,
+      "intervention": "mask_most_used",
+      "mean": 0.005303030212720235,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.016953852801053278,
+      "task": "organcmnist"
+    },
+    {
+      "ci_high": 0.04066287891732321,
+      "ci_low": 0.017676766485803658,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.028535350329346128,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.02603266309678745,
+      "task": "organcmnist"
+    },
+    {
+      "ci_high": 0.061369954566988676,
+      "ci_low": 0.048989901877939696,
+      "intervention": "forced_worst",
+      "mean": 0.05530303137169944,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.013966591893821342,
+      "task": "organsmnist"
+    },
+    {
+      "ci_high": 0.029243055468218194,
+      "ci_low": 0.022853536191913815,
+      "intervention": "random_mean",
+      "mean": 0.025959596865706973,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.007032963578819094,
+      "task": "organsmnist"
+    },
+    {
+      "ci_high": 0.04242424832450019,
+      "ci_low": 0.02474116041428513,
+      "intervention": "swap",
+      "mean": 0.033585862153106265,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.019543833270727628,
+      "task": "organsmnist"
+    },
+    {
+      "ci_high": 0.007070703680316607,
+      "ci_low": 0.0,
+      "intervention": "mask_most_used",
+      "mean": 0.0025252517726686266,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.00871163531654843,
+      "task": "organsmnist"
+    },
+    {
+      "ci_high": 0.03156565876884593,
+      "ci_low": 0.016660355197058784,
+      "intervention": "permuted_task_assignment",
+      "mean": 0.023484854234589472,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.017517960071187586,
+      "task": "organsmnist"
+    }
+  ],
+  "maximum_global_best_frequency": 0.21296296296296297,
+  "metadata": {
+    "config_hash": "542a0a5d1d17944267f6445f2ffd37d4fcc1f2fa88bad8e628fa1b412de56ef7",
+    "cuda": "11.8",
+    "device": "cuda:0",
+    "device_name": "Quadro RTX 8000",
+    "elapsed_seconds": 133.43319619819522,
+    "evaluation_shots": [
+      1,
+      5,
+      16
+    ],
+    "experiment_id": "M3_GATE1_CANONICAL_20260805T070831Z",
+    "git_commit": "ca4cf41c19e3a00d76d26227d88d451967c964d1",
+    "host": "doraemon15",
+    "max_gpu_memory_bytes": 70611456,
+    "support_resamples": 3,
+    "task_split_seeds": [
+      0,
+      1
+    ],
+    "torch": "2.2.2+cu118",
+    "train_seeds": [
+      0,
+      1
+    ]
+  },
+  "passing_intervention_task_split_count": 0,
+  "passing_split_count": 2,
+  "passing_task_split_count": 6,
+  "schema_version": 1,
+  "split_comparisons": {
+    "shared": [
+      {
+        "baseline": "shared",
+        "ci_high": 0.052777776432534056,
+        "ci_low": 0.02394964821222756,
+        "mean": 0.03749999817874697,
+        "n": 36,
+        "split_seed": 0,
+        "std": 0.04348132023847505
+      },
+      {
+        "baseline": "shared",
+        "ci_high": 0.03089531310316589,
+        "ci_low": 0.021017344332196645,
+        "mean": 0.025941530242562294,
+        "n": 72,
+        "split_seed": 1,
+        "std": 0.02088660280256952
+      }
+    ],
+    "single": [
+      {
+        "baseline": "single",
+        "ci_high": 0.04792100806824035,
+        "ci_low": 0.02326388649849428,
+        "mean": 0.034722222222222224,
+        "n": 36,
+        "split_seed": 0,
+        "std": 0.037780041919011235
+      },
+      {
+        "baseline": "single",
+        "ci_high": 0.035616564207399885,
+        "ci_low": 0.024798008711594675,
+        "mean": 0.03013382148411539,
+        "n": 72,
+        "split_seed": 1,
+        "std": 0.022992827003643156
+      }
+    ]
+  },
+  "status": "FAIL",
+  "task_split_effects": [
+    {
+      "baseline": "shared",
+      "ci_high": 0.07500000140733189,
+      "ci_low": 0.023611111773384943,
+      "mean": 0.04861111111111111,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.05653748560663506,
+      "task": "pneumoniamnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.07083333366447025,
+      "ci_low": 0.030555557707945505,
+      "mean": 0.05000000364250607,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.044556643171724815,
+      "task": "pneumoniamnist"
+    },
+    {
+      "baseline": "shared",
+      "ci_high": 0.03541666271371974,
+      "ci_low": 0.017013887522949113,
+      "mean": 0.026388885246382818,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.020845584522068264,
+      "task": "tissuemnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.02848958012958366,
+      "ci_low": 0.010069441464212205,
+      "mean": 0.019444440801938374,
+      "n": 18,
+      "split_seed": 0,
+      "std": 0.02142540741886314,
+      "task": "tissuemnist"
+    },
+    {
+      "baseline": "shared",
+      "ci_high": 0.04003685054679711,
+      "ci_low": 0.020084722071058218,
+      "mean": 0.029018645485242207,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.023036657351306167,
+      "task": "dermamnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.028874406301312976,
+      "ci_low": 0.011810281210475497,
+      "mean": 0.020030236906475492,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.020073700883884778,
+      "task": "dermamnist"
+    },
+    {
+      "baseline": "shared",
+      "ci_high": 0.0313131263686551,
+      "ci_low": 0.015909088899691903,
+      "mean": 0.02272727092107137,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.016499734244629548,
+      "task": "organamnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.03005050950580173,
+      "ci_low": 0.01616161887844404,
+      "mean": 0.022727275888125103,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.015035208933016266,
+      "task": "organamnist"
+    },
+    {
+      "baseline": "shared",
+      "ci_high": 0.0406628780066967,
+      "ci_low": 0.017929289034671253,
+      "mean": 0.028535350329346128,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.02603266309678745,
+      "task": "organcmnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.05202019717544318,
+      "ci_low": 0.030801759908596675,
+      "mean": 0.04191918753915363,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.025020925284119252,
+      "task": "organcmnist"
+    },
+    {
+      "baseline": "shared",
+      "ci_high": 0.031818187919755776,
+      "ci_low": 0.015909096433056727,
+      "mean": 0.023484854234589472,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.017517960071187586,
+      "task": "organsmnist"
+    },
+    {
+      "baseline": "single",
+      "ci_high": 0.04722853667206234,
+      "ci_low": 0.024494946830802493,
+      "mean": 0.035858585602707334,
+      "n": 18,
+      "split_seed": 1,
+      "std": 0.024596350813837986,
+      "task": "organsmnist"
+    }
+  ],
+  "thresholds": {
+    "maximum_global_best_frequency": 0.9,
+    "minimum_accuracy_gap": 0.01,
+    "minimum_intervention_task_split_count": 2,
+    "minimum_passing_split_count": 2,
+    "minimum_passing_task_split_count": 2
+  }
+}

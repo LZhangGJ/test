@@ -1,0 +1,521 @@
+[
+  {
+    "label_counts": {
+      "0": 9366,
+      "1": 9509,
+      "2": 10360,
+      "3": 10401,
+      "4": 8006,
+      "5": 12182,
+      "6": 7886,
+      "7": 9401,
+      "8": 12885
+    },
+    "sample_count": 89996,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pathmnist.npz",
+    "source_sha256": "81823f52dc622e69db2db4c72f8e8e617938dd6864d3c1f23d4e49724a28ea72",
+    "split": "train",
+    "task": "pathmnist"
+  },
+  {
+    "label_counts": {
+      "0": 1041,
+      "1": 1057,
+      "2": 1152,
+      "3": 1156,
+      "4": 890,
+      "5": 1354,
+      "6": 877,
+      "7": 1045,
+      "8": 1432
+    },
+    "sample_count": 10004,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pathmnist.npz",
+    "source_sha256": "81823f52dc622e69db2db4c72f8e8e617938dd6864d3c1f23d4e49724a28ea72",
+    "split": "val",
+    "task": "pathmnist"
+  },
+  {
+    "label_counts": {
+      "0": 1338,
+      "1": 847,
+      "2": 339,
+      "3": 634,
+      "4": 1035,
+      "5": 592,
+      "6": 741,
+      "7": 421,
+      "8": 1233
+    },
+    "sample_count": 7180,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pathmnist.npz",
+    "source_sha256": "81823f52dc622e69db2db4c72f8e8e617938dd6864d3c1f23d4e49724a28ea72",
+    "split": "test",
+    "task": "pathmnist"
+  },
+  {
+    "label_counts": {
+      "0": 228,
+      "1": 359,
+      "2": 769,
+      "3": 80,
+      "4": 779,
+      "5": 4693,
+      "6": 99
+    },
+    "sample_count": 7007,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/dermamnist.npz",
+    "source_sha256": "1a309fec2e33bb6aba88e7d078e5ccbb9736c84a0b415ac197eb3c8fa331e050",
+    "split": "train",
+    "task": "dermamnist"
+  },
+  {
+    "label_counts": {
+      "0": 33,
+      "1": 52,
+      "2": 110,
+      "3": 12,
+      "4": 111,
+      "5": 671,
+      "6": 14
+    },
+    "sample_count": 1003,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/dermamnist.npz",
+    "source_sha256": "1a309fec2e33bb6aba88e7d078e5ccbb9736c84a0b415ac197eb3c8fa331e050",
+    "split": "val",
+    "task": "dermamnist"
+  },
+  {
+    "label_counts": {
+      "0": 66,
+      "1": 103,
+      "2": 220,
+      "3": 23,
+      "4": 223,
+      "5": 1341,
+      "6": 29
+    },
+    "sample_count": 2005,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/dermamnist.npz",
+    "source_sha256": "1a309fec2e33bb6aba88e7d078e5ccbb9736c84a0b415ac197eb3c8fa331e050",
+    "split": "test",
+    "task": "dermamnist"
+  },
+  {
+    "label_counts": {
+      "0": 33484,
+      "1": 10213,
+      "2": 7754,
+      "3": 46026
+    },
+    "sample_count": 97477,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/octmnist.npz",
+    "source_sha256": "2f909b7563c0279881a5d51c85a64833f3d4e42eace52b43ac2f22d15ff24986",
+    "split": "train",
+    "task": "octmnist"
+  },
+  {
+    "label_counts": {
+      "0": 3721,
+      "1": 1135,
+      "2": 862,
+      "3": 5114
+    },
+    "sample_count": 10832,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/octmnist.npz",
+    "source_sha256": "2f909b7563c0279881a5d51c85a64833f3d4e42eace52b43ac2f22d15ff24986",
+    "split": "val",
+    "task": "octmnist"
+  },
+  {
+    "label_counts": {
+      "0": 250,
+      "1": 250,
+      "2": 250,
+      "3": 250
+    },
+    "sample_count": 1000,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/octmnist.npz",
+    "source_sha256": "2f909b7563c0279881a5d51c85a64833f3d4e42eace52b43ac2f22d15ff24986",
+    "split": "test",
+    "task": "octmnist"
+  },
+  {
+    "label_counts": {
+      "0": 1214,
+      "1": 3494
+    },
+    "sample_count": 4708,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pneumoniamnist.npz",
+    "source_sha256": "e1792d3f03751cb101e99f19a63b3c1941436c988665f47853417b05be250cd8",
+    "split": "train",
+    "task": "pneumoniamnist"
+  },
+  {
+    "label_counts": {
+      "0": 135,
+      "1": 389
+    },
+    "sample_count": 524,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pneumoniamnist.npz",
+    "source_sha256": "e1792d3f03751cb101e99f19a63b3c1941436c988665f47853417b05be250cd8",
+    "split": "val",
+    "task": "pneumoniamnist"
+  },
+  {
+    "label_counts": {
+      "0": 234,
+      "1": 390
+    },
+    "sample_count": 624,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/pneumoniamnist.npz",
+    "source_sha256": "e1792d3f03751cb101e99f19a63b3c1941436c988665f47853417b05be250cd8",
+    "split": "test",
+    "task": "pneumoniamnist"
+  },
+  {
+    "label_counts": {
+      "0": 147,
+      "1": 399
+    },
+    "sample_count": 546,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "train",
+    "task": "breastmnist"
+  },
+  {
+    "label_counts": {
+      "0": 21,
+      "1": 57
+    },
+    "sample_count": 78,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "val",
+    "task": "breastmnist"
+  },
+  {
+    "label_counts": {
+      "0": 42,
+      "1": 114
+    },
+    "sample_count": 156,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/breastmnist.npz",
+    "source_sha256": "3a22d2a4625e7dd8903f0f59030e81a3d0c222bece2e5e10927456cb50efdec1",
+    "split": "test",
+    "task": "breastmnist"
+  },
+  {
+    "label_counts": {
+      "0": 852,
+      "1": 2181,
+      "2": 1085,
+      "3": 2026,
+      "4": 849,
+      "5": 993,
+      "6": 2330,
+      "7": 1643
+    },
+    "sample_count": 11959,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/bloodmnist.npz",
+    "source_sha256": "062023e186f537e26b3c21ea3b2614ddfc475e8a14825dfd20663bbb7e37bddc",
+    "split": "train",
+    "task": "bloodmnist"
+  },
+  {
+    "label_counts": {
+      "0": 122,
+      "1": 312,
+      "2": 155,
+      "3": 290,
+      "4": 122,
+      "5": 143,
+      "6": 333,
+      "7": 235
+    },
+    "sample_count": 1712,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/bloodmnist.npz",
+    "source_sha256": "062023e186f537e26b3c21ea3b2614ddfc475e8a14825dfd20663bbb7e37bddc",
+    "split": "val",
+    "task": "bloodmnist"
+  },
+  {
+    "label_counts": {
+      "0": 244,
+      "1": 624,
+      "2": 311,
+      "3": 579,
+      "4": 243,
+      "5": 284,
+      "6": 666,
+      "7": 470
+    },
+    "sample_count": 3421,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/bloodmnist.npz",
+    "source_sha256": "062023e186f537e26b3c21ea3b2614ddfc475e8a14825dfd20663bbb7e37bddc",
+    "split": "test",
+    "task": "bloodmnist"
+  },
+  {
+    "label_counts": {
+      "0": 53075,
+      "1": 7814,
+      "2": 5866,
+      "3": 15406,
+      "4": 11789,
+      "5": 7705,
+      "6": 39203,
+      "7": 24608
+    },
+    "sample_count": 165466,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/tissuemnist.npz",
+    "source_sha256": "b4083e9b18254d3cc6138d833b0160c072c9b8a43718bdaf6bdf8f980eeb9659",
+    "split": "train",
+    "task": "tissuemnist"
+  },
+  {
+    "label_counts": {
+      "0": 7582,
+      "1": 1117,
+      "2": 838,
+      "3": 2201,
+      "4": 1684,
+      "5": 1101,
+      "6": 5601,
+      "7": 3516
+    },
+    "sample_count": 23640,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/tissuemnist.npz",
+    "source_sha256": "b4083e9b18254d3cc6138d833b0160c072c9b8a43718bdaf6bdf8f980eeb9659",
+    "split": "val",
+    "task": "tissuemnist"
+  },
+  {
+    "label_counts": {
+      "0": 15165,
+      "1": 2233,
+      "2": 1677,
+      "3": 4402,
+      "4": 3369,
+      "5": 2202,
+      "6": 11201,
+      "7": 7031
+    },
+    "sample_count": 47280,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/tissuemnist.npz",
+    "source_sha256": "b4083e9b18254d3cc6138d833b0160c072c9b8a43718bdaf6bdf8f980eeb9659",
+    "split": "test",
+    "task": "tissuemnist"
+  },
+  {
+    "label_counts": {
+      "0": 1956,
+      "1": 1390,
+      "2": 1357,
+      "3": 1474,
+      "4": 3963,
+      "5": 3817,
+      "6": 6164,
+      "7": 3919,
+      "8": 3929,
+      "9": 3031,
+      "10": 3561
+    },
+    "sample_count": 34561,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organamnist.npz",
+    "source_sha256": "7c8c8b0753e2c0d7f70928817eac02be7cbb09f6beff4346e9d0ea79ecb598bd",
+    "split": "train",
+    "task": "organamnist"
+  },
+  {
+    "label_counts": {
+      "0": 321,
+      "1": 233,
+      "2": 225,
+      "3": 392,
+      "4": 568,
+      "5": 637,
+      "6": 1033,
+      "7": 1033,
+      "8": 1009,
+      "9": 529,
+      "10": 511
+    },
+    "sample_count": 6491,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organamnist.npz",
+    "source_sha256": "7c8c8b0753e2c0d7f70928817eac02be7cbb09f6beff4346e9d0ea79ecb598bd",
+    "split": "val",
+    "task": "organamnist"
+  },
+  {
+    "label_counts": {
+      "0": 1036,
+      "1": 784,
+      "2": 793,
+      "3": 785,
+      "4": 2064,
+      "5": 1965,
+      "6": 3285,
+      "7": 1747,
+      "8": 1813,
+      "9": 1622,
+      "10": 1884
+    },
+    "sample_count": 17778,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organamnist.npz",
+    "source_sha256": "7c8c8b0753e2c0d7f70928817eac02be7cbb09f6beff4346e9d0ea79ecb598bd",
+    "split": "test",
+    "task": "organamnist"
+  },
+  {
+    "label_counts": {
+      "0": 1148,
+      "1": 619,
+      "2": 595,
+      "3": 600,
+      "4": 1088,
+      "5": 1170,
+      "6": 2986,
+      "7": 1002,
+      "8": 1022,
+      "9": 1173,
+      "10": 1572
+    },
+    "sample_count": 12975,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organcmnist.npz",
+    "source_sha256": "69cd6d6b6343adc25f916c1c6e2fc786e82443670e25d5da275b1c4e32e8da7a",
+    "split": "train",
+    "task": "organcmnist"
+  },
+  {
+    "label_counts": {
+      "0": 191,
+      "1": 102,
+      "2": 96,
+      "3": 202,
+      "4": 132,
+      "5": 157,
+      "6": 429,
+      "7": 347,
+      "8": 352,
+      "9": 179,
+      "10": 205
+    },
+    "sample_count": 2392,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organcmnist.npz",
+    "source_sha256": "69cd6d6b6343adc25f916c1c6e2fc786e82443670e25d5da275b1c4e32e8da7a",
+    "split": "val",
+    "task": "organcmnist"
+  },
+  {
+    "label_counts": {
+      "0": 828,
+      "1": 431,
+      "2": 421,
+      "3": 421,
+      "4": 727,
+      "5": 735,
+      "6": 1835,
+      "7": 549,
+      "8": 557,
+      "9": 750,
+      "10": 962
+    },
+    "sample_count": 8216,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organcmnist.npz",
+    "source_sha256": "69cd6d6b6343adc25f916c1c6e2fc786e82443670e25d5da275b1c4e32e8da7a",
+    "split": "test",
+    "task": "organcmnist"
+  },
+  {
+    "label_counts": {
+      "0": 1148,
+      "1": 630,
+      "2": 614,
+      "3": 721,
+      "4": 1132,
+      "5": 1119,
+      "6": 3464,
+      "7": 741,
+      "8": 803,
+      "9": 2004,
+      "10": 1556
+    },
+    "sample_count": 13932,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organsmnist.npz",
+    "source_sha256": "da58587ffde9866be541db57a7c20e48505b93e653c23860ae55046c93a66655",
+    "split": "train",
+    "task": "organsmnist"
+  },
+  {
+    "label_counts": {
+      "0": 188,
+      "1": 104,
+      "2": 95,
+      "3": 246,
+      "4": 140,
+      "5": 159,
+      "6": 491,
+      "7": 261,
+      "8": 275,
+      "9": 280,
+      "10": 213
+    },
+    "sample_count": 2452,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organsmnist.npz",
+    "source_sha256": "da58587ffde9866be541db57a7c20e48505b93e653c23860ae55046c93a66655",
+    "split": "val",
+    "task": "organsmnist"
+  },
+  {
+    "label_counts": {
+      "0": 811,
+      "1": 439,
+      "2": 445,
+      "3": 510,
+      "4": 704,
+      "5": 693,
+      "6": 2078,
+      "7": 397,
+      "8": 439,
+      "9": 1343,
+      "10": 968
+    },
+    "sample_count": 8827,
+    "size": 28,
+    "source_file": "/dataT0/Free/lzhang/tamoe/data/medmnist/organsmnist.npz",
+    "source_sha256": "da58587ffde9866be541db57a7c20e48505b93e653c23860ae55046c93a66655",
+    "split": "test",
+    "task": "organsmnist"
+  }
+]
