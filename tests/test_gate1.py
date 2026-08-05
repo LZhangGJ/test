@@ -3,7 +3,13 @@ from __future__ import annotations
 import pandas as pd
 import torch
 
-from tamoe.analysis.gate1 import Gate1Thresholds, bootstrap_mean_ci, decide_gate1, macro_f1
+from tamoe.analysis.gate1 import (
+    Gate1Thresholds,
+    bootstrap_mean_ci,
+    decide_gate1,
+    feasible_query_count,
+    macro_f1,
+)
 
 
 def test_macro_f1_is_one_for_perfect_prediction() -> None:
@@ -16,6 +22,12 @@ def test_bootstrap_mean_ci_is_deterministic() -> None:
     assert bootstrap_mean_ci(values, repeats=100, seed=7) == bootstrap_mean_ci(
         values, repeats=100, seed=7
     )
+
+
+def test_feasible_query_count_preserves_disjoint_sampling() -> None:
+    labels = torch.tensor([0] * 23 + [1] * 40)
+    assert feasible_query_count(labels, shots=5, desired_queries=20) == 18
+    assert feasible_query_count(labels, shots=16, desired_queries=20) == 7
 
 
 def test_gate_fails_global_dominance() -> None:

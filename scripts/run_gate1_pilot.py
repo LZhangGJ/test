@@ -22,6 +22,7 @@ from tamoe.analysis.gate1 import (
     add_global_interventions,
     decide_gate1,
     evaluate_episode,
+    feasible_query_count,
 )
 from tamoe.data.feature_cache import FeatureSet, extract_or_load_features
 from tamoe.data.medmnist_dataset import MedMNISTTensorDataset
@@ -189,10 +190,15 @@ def main() -> int:
             expert_name_set = "|".join(sorted(experts))
             for task_name, feature_set in evaluation_features.items():
                 for shots in config["evaluation_shots"]:
+                    queries_per_class = feasible_query_count(
+                        feature_set.labels,
+                        shots=int(shots),
+                        desired_queries=int(config["query_per_class"]),
+                    )
                     for support_resample in range(int(config["support_resamples"])):
                         rows, audit = evaluate_episode(
                             experts, feature_set.features, feature_set.labels,
-                            shots=int(shots), queries_per_class=int(config["query_per_class"]),
+                            shots=int(shots), queries_per_class=queries_per_class,
                             seed=int(split_seed) * 100_000 + int(train_seed) * 1_000 + int(shots),
                             repetition=support_resample, temperature=float(config["temperature"]),
                             device=device, random_repeats=int(config["random_router_repeats"]),
@@ -202,6 +208,7 @@ def main() -> int:
                             "git_commit": code_version, "split_seed": split_seed,
                             "split_hash": task_split.split_hash, "train_seed": train_seed,
                             "task": task_name, "shots": shots, "support_resample": support_resample,
+                            "queries_per_class": queries_per_class,
                             "episode_hash": audit["episode_hash"], "expert_name_set": expert_name_set,
                             "query_labels_analysis_only": True,
                         }

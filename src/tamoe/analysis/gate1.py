@@ -41,6 +41,21 @@ def macro_f1(prediction: Tensor, target: Tensor) -> float:
     return float(np.mean(values))
 
 
+def feasible_query_count(labels: Tensor, *, shots: int, desired_queries: int) -> int:
+    """Choose the largest disjoint per-class query count supported by an episode pool."""
+
+    if shots <= 0 or desired_queries <= 0:
+        raise ValueError("shots and desired_queries must be positive")
+    counts = torch.bincount(labels.long())
+    populated = counts[counts > 0]
+    if len(populated) == 0:
+        raise ValueError("labels cannot be empty")
+    available = int(populated.min().item()) - shots
+    if available <= 0:
+        raise ValueError(f"at least one class cannot support {shots} shots plus a query")
+    return min(desired_queries, available)
+
+
 def _metrics(logits: Tensor, labels: Tensor) -> dict[str, float]:
     prediction = logits.argmax(dim=-1)
     return {
