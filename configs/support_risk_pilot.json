@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "protocol_id": "support-risk-routing-pilot-v1",
+  "hypothesis_role": "new_falsifiable_hypothesis_not_gate2_rescue",
+  "protected_h1_status": "terminated_unchanged",
+  "reuse": {
+    "gate2_experiment_id": "GATE2_SOFT_20260805T114653Z_82ced99",
+    "gate2_runtime_git_sha": "82ced995af7ce41b0d45f1be3df9ea39efb0e948",
+    "gate2_decision_sha256": "78f0c8e4e0bb2a2c8e756bc9c0b1eec0150c258ff5b92125b2fb1e6ab91c898f",
+    "checkpoint_policy": "load_exact_gate2_checkpoints_read_only",
+    "feature_cache_code_version": "82ced995af7ce41b0d45f1be3df9ea39efb0e948"
+  },
+  "task_split_seeds": [6, 36],
+  "train_seeds": [2, 3, 4],
+  "shots": [5, 10],
+  "support_resamples": 20,
+  "query_per_class": 20,
+  "bootstrap_repeats": 10000,
+  "model_and_training_source": "configs/m3_gate1r_confirmatory.json",
+  "candidate_set": ["shared", "source_*"],
+  "primary_method": "shrinkage_support_risk_with_shared_fallback",
+  "methods": [
+    "naive_support_loss_top1",
+    "leave_one_out_support_risk_top1",
+    "leave_one_out_support_risk_soft_mixture",
+    "shrinkage_support_risk_mixture",
+    "shrinkage_support_risk_with_shared_fallback"
+  ],
+  "controls": [
+    "capacity_matched_single",
+    "shared",
+    "random_expected",
+    "oracle_analysis_only",
+    "original_support_prototype",
+    "original_support_soft_mixture",
+    "support_shuffle",
+    "support_label_removal",
+    "wrong_task_support"
+  ],
+  "risk_estimator": {
+    "held_out_loss": "cross_entropy",
+    "held_out_accuracy_reported": true,
+    "held_out_loss_variance_reported": true,
+    "risk_temperature": 0.25,
+    "shrinkage_prior_strength": 5.0,
+    "shrinkage_variance_scale": 0.25,
+    "shared_fallback_weight": 0.5,
+    "learned_parameters": 0,
+    "hyperparameter_trials": 1
+  },
+  "control_definitions": {
+    "oracle_gap_baseline": "capacity_matched_single",
+    "support_label_removal": "exact Gate 2 unlabeled-support reference weights plus the frozen shared fallback",
+    "wrong_task_support": "shrinkage weights from the other task at the identical split, train seed, shot, and support resample",
+    "support_shuffle": "exact Gate 2 mismatch construction: other-task shrinkage weights with support resample shifted by one"
+  },
+  "go_criteria": {
+    "accuracy_improvement_over_capacity_matched_single_gte": 0.005,
+    "paired_aggregate_hierarchical_ci_low_gt": 0.0,
+    "oracle_gap_recovery_gte": 0.20,
+    "minimum_positive_task_count": 3,
+    "positive_split_count_required": 2,
+    "minimum_passing_support_ablations": 2,
+    "support_ablation_accuracy_drop_gte": 0.005,
+    "support_ablation_hierarchical_ci_low_gt": 0.0,
+    "nll_no_worse_than_shared": true
+  },
+  "outcome_rule": {
+    "GO_FIXED_BANK_ROUTING": "all_go_criteria_pass",
+    "STOP_FIXED_BANK_ROUTING": "any_required_criterion_fails"
+  },
+  "figure_contract": {
+    "question": "How do the five fixed support-risk methods change accuracy relative to capacity-matched single on identical episodes?",
+    "family": "Uncertainty & Benchmark",
+    "variant": "horizontal dot and hierarchical 95% interval",
+    "renderer": "matplotlib_static_png",
+    "palette_policy": "single_blue_root_with_neutral_comparators",
+    "output": "figures/support_risk_paired_deltas.png"
+  },
+  "required_outputs": [
+    "reports/support_risk_pilot_decision.json",
+    "reports/support_risk_pilot_report.md",
+    "results/support_risk_pilot_results.json",
+    "figures/support_risk_paired_deltas.png"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version", "outcome", "criteria", "raw_values", "thresholds",
+    "experiment_id", "config_hash", "runtime_git_sha", "gate2_decision_sha256",
+    "checkpoint_hashes", "host_gpu", "elapsed_time", "gpu_hours", "test_count",
+    "schema_validation"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "outcome": {"enum": ["GO_FIXED_BANK_ROUTING", "STOP_FIXED_BANK_ROUTING"]},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "config_hash": {"pattern": "^[0-9a-f]{64}$"},
+    "runtime_git_sha": {"pattern": "^[0-9a-f]{40}$"},
+    "gate2_decision_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "checkpoint_hashes": {"type": "object", "minProperties": 1},
+    "test_count": {"type": "integer", "minimum": 1},
+    "schema_validation": {"const": "VALID"}
+  }
+}

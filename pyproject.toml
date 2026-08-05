@@ -9,6 +9,7 @@ description = "Task-ID-free selective expert adaptation research toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+  "matplotlib>=3.8",
   "medmnist>=3.0",
   "pandas>=2.0",
   "pyarrow>=15.0",
