@@ -116,6 +116,23 @@ working branch, audit all six hosts and the shared path, implement M0–M3 first
 run the Gate 1 pilot, and continue automatically only when the documented gate
 criteria pass.
 
+## M0 developer commands
+
+The source package uses typed configuration and keeps run artifacts outside
+Git. From an isolated Python 3.10+ environment:
+
+```text
+python -m pip install -e ".[dev]"
+python -m pytest
+ruff check .
+powershell -File scripts/windows_smoke.ps1
+python scripts/probe_hosts.py --hosts doraemon02,doraemon03,doraemon04,doraemon15,doraemon19,doraemon20 --output-json reports/environment_inventory.json --output-markdown reports/environment_inventory.md
+```
+
+The host probe is non-destructive. It never changes a remote environment or
+terminates a process. A shared project root is reported as confirmed only when
+the same configured path is observed on all six hosts.
+
 ## Citation and metadata note
 
 The two raw Deep Research reports preserve session-specific citation markers.

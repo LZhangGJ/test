@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tamoe"
+version = "0.1.0"
+description = "Task-ID-free selective expert adaptation research toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "medmnist>=3.0",
+  "pandas>=2.0",
+  "pyarrow>=15.0",
+  "PyYAML>=6.0",
+  "torch>=2.2",
+  "torchvision>=0.17",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+tamoe-probe = "tamoe.execution.probe:main"
+tamoe-smoke = "tamoe.smoke:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tamoe"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

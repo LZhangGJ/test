@@ -1,0 +1,13 @@
+{
+  "study": "M0",
+  "experiment_name": "synthetic_cpu_smoke",
+  "seed": 20260805,
+  "device": "cpu",
+  "num_workers": 0,
+  "num_classes": 3,
+  "samples_per_class": 6,
+  "shots": 2,
+  "queries_per_class": 2,
+  "embedding_dim": 16,
+  "learning_rate": 0.001
+}

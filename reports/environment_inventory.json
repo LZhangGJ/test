@@ -1,0 +1,633 @@
+{
+  "first_end_to_end_host": "doraemon15",
+  "generated_at_utc": "2026-08-05T05:34:22.325642+00:00",
+  "gpu_availability_ranking": [
+    {
+      "host": "doraemon15",
+      "idle_gpu_count": 4,
+      "max_free_gpu_mib": 48600
+    },
+    {
+      "host": "doraemon02",
+      "idle_gpu_count": 4,
+      "max_free_gpu_mib": 24435
+    },
+    {
+      "host": "doraemon04",
+      "idle_gpu_count": 4,
+      "max_free_gpu_mib": 11170
+    },
+    {
+      "host": "doraemon03",
+      "idle_gpu_count": 2,
+      "max_free_gpu_mib": 24150
+    },
+    {
+      "host": "doraemon20",
+      "idle_gpu_count": 1,
+      "max_free_gpu_mib": 81148
+    }
+  ],
+  "hosts": {
+    "doraemon02": {
+      "architecture": "x86_64",
+      "cpu_logical": 16,
+      "cuda_nvcc": {
+        "returncode": 127,
+        "stderr": "/bin/sh: 1: nvcc: not found",
+        "stdout": "",
+        "timed_out": false
+      },
+      "fqdn": "doraemon02.s.m.is.nagoya-u.ac.jp",
+      "hostname": "doraemon02",
+      "memory": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "total        used        free      shared  buff/cache   available\nMem:     134976040960  1233735680 91339649024  8941932544 42402656256 123511513088\nSwap:    107374178304 33742704640 73631473664",
+        "timed_out": false
+      },
+      "nccl": {
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_gpu": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0, GPU-385d2fc4-943f-a9fd-640d-a949bf24421b, Quadro P6000, 24576, 24435, 0, 565.57.01\n1, GPU-b1764cf2-a58c-5d4b-f5c8-acec9e69d507, Quadro P6000, 24576, 24435, 0, 565.57.01\n2, GPU-a0b88c77-ad10-5431-01dd-5aaba1b7575c, Quadro P6000, 24576, 24435, 0, 565.57.01\n3, GPU-3256e567-e3ac-08a6-caf2-9eae89dfac34, Quadro P6000, 24576, 24435, 0, 565.57.01",
+        "timed_out": false
+      },
+      "nvidia_processes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_smi": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Wed Aug  5 14:33:34 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  Quadro P6000                   Off |   00000000:05:00.0 Off |                  Off |\n| 26%   53C    P8             18W /  250W |       3MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  Quadro P6000                   Off |   00000000:06:00.0 Off |                  Off |\n| 26%   43C    P8             10W /  250W |       3MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   2  Quadro P6000                   Off |   00000000:09:00.0 Off |                  Off |\n| 26%   41C    P8              9W /  250W |       3MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   3  Quadro P6000                   Off |   00000000:0A:00.0 Off |                  Off |\n| 26%   34C    P8              9W /  250W |       3MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+",
+        "timed_out": false
+      },
+      "os": "Linux-5.15.0-130-generic-x86_64-with-glibc2.35",
+      "paths": {
+        "cwd": {
+          "device": 53,
+          "exists": true,
+          "free_bytes": 3752251621376,
+          "inode": 197568495744,
+          "path": "/homes/lzhang",
+          "total_bytes": 155998754963456
+        }
+      },
+      "probe_status": "SUCCEEDED",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]"
+      },
+      "shared_mounts": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/homes taka2:/homes nfs4\n/suedata1 taka2:/suedata1 nfs4\n/data4 taka2:/data4 nfs4\n/data7 taka9:/data7 nfs4\n/dataT0 taka2new:/dataT0 nfs4\n/dataT1 taka2new:/dataT1 nfs4\n/dataF0 taka2new:/dataF0 nfs4\n/suedata1copy taka2new:/fcbackup06 nfs4\n/homescopy taka2new:/fcbackup08 nfs4\n/data4copy taka2new:/fcbackup09 nfs4",
+        "timed_out": false
+      },
+      "slurm": {
+        "sbatch": {
+          "returncode": 127,
+          "stderr": "",
+          "stdout": "",
+          "timed_out": false
+        },
+        "sinfo": {
+          "returncode": 127,
+          "stderr": "/bin/sh: 1: sinfo: not found",
+          "stdout": "",
+          "timed_out": false
+        }
+      },
+      "ssh_reachable": true,
+      "tamoe_environment": {
+        "TAMOE_CACHE_ROOT": null,
+        "TAMOE_DATA_ROOT": null,
+        "TAMOE_LOCAL_SCRATCH": null,
+        "TAMOE_PROJECT_ROOT": null,
+        "TAMOE_RUN_ROOT": null
+      },
+      "torch": {
+        "available": false,
+        "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'"
+      }
+    },
+    "doraemon03": {
+      "architecture": "x86_64",
+      "cpu_logical": 16,
+      "cuda_nvcc": {
+        "returncode": 127,
+        "stderr": "/bin/sh: 1: nvcc: not found",
+        "stdout": "",
+        "timed_out": false
+      },
+      "fqdn": "doraemon03.s.m.is.nagoya-u.ac.jp",
+      "hostname": "doraemon03",
+      "memory": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "total        used        free      shared  buff/cache   available\nMem:     126519607296  3848286208 87147880448  8928571392 35523440640 112522924032\nSwap:    48006950912  3623632896 44383318016",
+        "timed_out": false
+      },
+      "nccl": {
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_gpu": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0, GPU-b56daa58-4567-25a2-4b39-2031ae6bd5cb, NVIDIA GeForce RTX 3090, 24576, 24148, 0, 565.57.01\n1, GPU-a329ebc3-1898-5261-f967-9a3d50c53d9a, NVIDIA GeForce RTX 3090, 24576, 24150, 0, 565.57.01",
+        "timed_out": false
+      },
+      "nvidia_processes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_smi": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Wed Aug  5 14:33:36 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 3090        Off |   00000000:06:00.0 Off |                  N/A |\n|  0%   60C    P8             32W /  370W |       2MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA GeForce RTX 3090        Off |   00000000:0B:00.0 Off |                  N/A |\n|  0%   52C    P8             18W /  370W |       2MiB /  24576MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+",
+        "timed_out": false
+      },
+      "os": "Linux-5.15.0-130-generic-x86_64-with-glibc2.35",
+      "paths": {
+        "cwd": {
+          "device": 49,
+          "exists": true,
+          "free_bytes": 3752251621376,
+          "inode": 197568495744,
+          "path": "/homes/lzhang",
+          "total_bytes": 155998754963456
+        }
+      },
+      "probe_status": "SUCCEEDED",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]"
+      },
+      "shared_mounts": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/homes taka2:/homes nfs4\n/suedata1 taka2:/suedata1 nfs4\n/data4 taka2:/data4 nfs4\n/data7 taka9:/data7 nfs4\n/dataT0 taka2new:/dataT0 nfs4\n/dataT1 taka2new:/dataT1 nfs4\n/dataF0 taka2new:/dataF0 nfs4\n/suedata1copy taka2new:/fcbackup06 nfs4\n/homescopy taka2new:/fcbackup08 nfs4\n/data4copy taka2new:/fcbackup09 nfs4",
+        "timed_out": false
+      },
+      "slurm": {
+        "sbatch": {
+          "returncode": 127,
+          "stderr": "",
+          "stdout": "",
+          "timed_out": false
+        },
+        "sinfo": {
+          "returncode": 127,
+          "stderr": "/bin/sh: 1: sinfo: not found",
+          "stdout": "",
+          "timed_out": false
+        }
+      },
+      "ssh_reachable": true,
+      "tamoe_environment": {
+        "TAMOE_CACHE_ROOT": null,
+        "TAMOE_DATA_ROOT": null,
+        "TAMOE_LOCAL_SCRATCH": null,
+        "TAMOE_PROJECT_ROOT": null,
+        "TAMOE_RUN_ROOT": null
+      },
+      "torch": {
+        "available": false,
+        "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'"
+      }
+    },
+    "doraemon04": {
+      "architecture": "x86_64",
+      "cpu_logical": 16,
+      "cuda_nvcc": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2022 NVIDIA Corporation\nBuilt on Thu_Feb_10_18:23:41_PST_2022\nCuda compilation tools, release 11.6, V11.6.112\nBuild cuda_11.6.r11.6/compiler.30978841_0",
+        "timed_out": false
+      },
+      "fqdn": "doraemon04.s.m.is.nagoya-u.ac.jp",
+      "hostname": "doraemon04",
+      "memory": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "total        used        free      shared  buff/cache   available\nMem:     134774804480  1444560896 118537539584     2703360 14792704000 132039401472\nSwap:    155916955648   504889344 155412066304",
+        "timed_out": false
+      },
+      "nccl": {
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_gpu": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0, GPU-befba2d1-d08d-a842-ed49-e05cba9e0e74, NVIDIA GeForce GTX 1080 Ti, 11264, 11170, 0, 535.183.01\n1, GPU-3c2e0e76-d537-ad18-43e5-820ffa438644, NVIDIA GeForce GTX 1080 Ti, 11264, 11170, 0, 535.183.01\n2, GPU-8eb71e2d-5528-5387-a211-0eb2b0ce591a, NVIDIA GeForce GTX 1080 Ti, 11264, 11170, 0, 535.183.01\n3, GPU-9721fdfd-81c6-dda3-da6d-e55bed90ab26, NVIDIA GeForce GTX 1080 Ti, 11264, 11170, 0, 535.183.01",
+        "timed_out": false
+      },
+      "nvidia_processes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_smi": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Wed Aug  5 14:33:36 2026       \n+---------------------------------------------------------------------------------------+\n| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |\n|-----------------------------------------+----------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |\n|                                         |                      |               MIG M. |\n|=========================================+======================+======================|\n|   0  NVIDIA GeForce GTX 1080 Ti     Off | 00000000:05:00.0 Off |                  N/A |\n| 20%   55C    P8              19W / 250W |      2MiB / 11264MiB |      0%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n|   1  NVIDIA GeForce GTX 1080 Ti     Off | 00000000:06:00.0 Off |                  N/A |\n| 20%   46C    P8              10W / 250W |      2MiB / 11264MiB |      0%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n|   2  NVIDIA GeForce GTX 1080 Ti     Off | 00000000:09:00.0 Off |                  N/A |\n| 20%   44C    P8              10W / 250W |      2MiB / 11264MiB |      0%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n|   3  NVIDIA GeForce GTX 1080 Ti     Off | 00000000:0A:00.0 Off |                  N/A |\n| 20%   36C    P8               9W / 250W |      2MiB / 11264MiB |      0%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n                                                                                         \n+---------------------------------------------------------------------------------------+\n| Processes:                                                                            |\n|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |\n|        ID   ID                                                             Usage      |\n|=======================================================================================|\n|  No running processes found                                                           |\n+---------------------------------------------------------------------------------------+",
+        "timed_out": false
+      },
+      "os": "Linux-5.15.0-130-generic-x86_64-with-glibc2.35",
+      "paths": {
+        "cwd": {
+          "device": 102,
+          "exists": true,
+          "free_bytes": 3752251621376,
+          "inode": 197568495744,
+          "path": "/homes/lzhang",
+          "total_bytes": 155998754963456
+        }
+      },
+      "probe_status": "SUCCEEDED",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]"
+      },
+      "shared_mounts": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/homes taka2:/homes nfs4\n/suedata1 taka2:/suedata1 nfs4\n/data4 taka2:/data4 nfs4\n/data7 taka9:/data7 nfs4\n/dataT0 taka2new:/dataT0 nfs4\n/dataT1 taka2new:/dataT1 nfs4\n/dataF0 taka2new:/dataF0 nfs4\n/suedata1copy taka2new:/fcbackup06 nfs4\n/homescopy taka2new:/fcbackup08 nfs4\n/data4copy taka2new:/fcbackup09 nfs4",
+        "timed_out": false
+      },
+      "slurm": {
+        "sbatch": {
+          "returncode": 127,
+          "stderr": "",
+          "stdout": "",
+          "timed_out": false
+        },
+        "sinfo": {
+          "returncode": 127,
+          "stderr": "/bin/sh: 1: sinfo: not found",
+          "stdout": "",
+          "timed_out": false
+        }
+      },
+      "ssh_reachable": true,
+      "tamoe_environment": {
+        "TAMOE_CACHE_ROOT": null,
+        "TAMOE_DATA_ROOT": null,
+        "TAMOE_LOCAL_SCRATCH": null,
+        "TAMOE_PROJECT_ROOT": null,
+        "TAMOE_RUN_ROOT": null
+      },
+      "torch": {
+        "available": false,
+        "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'"
+      }
+    },
+    "doraemon15": {
+      "architecture": "x86_64",
+      "cpu_logical": 80,
+      "cuda_nvcc": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2021 NVIDIA Corporation\nBuilt on Thu_Nov_18_09:45:30_PST_2021\nCuda compilation tools, release 11.5, V11.5.119\nBuild cuda_11.5.r11.5/compiler.30672275_0",
+        "timed_out": false
+      },
+      "fqdn": "doraemon15",
+      "hostname": "doraemon15",
+      "memory": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "total        used        free      shared  buff/cache   available\nMem:    404334972928 11998322688  1844908032   839028736 390491742208 388799119360\nSwap:   17179865088   598212608 16581652480",
+        "timed_out": false
+      },
+      "nccl": {
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_gpu": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0, GPU-180748c0-8783-fe7a-300f-5dfc34f5cb06, Quadro RTX 8000, 48601, 48600, 0, 495.29.05\n1, GPU-23e05330-b168-8956-7206-0aa8f9aaa82b, Quadro RTX 8000, 48601, 48600, 0, 495.29.05\n2, GPU-81e10404-c033-98ed-4aea-cf544e3a59cf, Quadro RTX 8000, 48601, 48600, 0, 495.29.05\n3, GPU-7e109458-ab21-aba5-8721-f7c90e172e6c, Quadro RTX 8000, 48601, 48600, 0, 495.29.05",
+        "timed_out": false
+      },
+      "nvidia_processes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_smi": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Wed Aug  5 14:33:39 2026       \n+-----------------------------------------------------------------------------+\n| NVIDIA-SMI 495.29.05    Driver Version: 495.29.05    CUDA Version: 11.5     |\n|-------------------------------+----------------------+----------------------+\n| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |\n|                               |                      |               MIG M. |\n|===============================+======================+======================|\n|   0  Quadro RTX 8000     On   | 00000000:18:00.0 Off |                  Off |\n| 34%   27C    P8    16W / 260W |      1MiB / 48601MiB |      0%      Default |\n|                               |                      |                  N/A |\n+-------------------------------+----------------------+----------------------+\n|   1  Quadro RTX 8000     On   | 00000000:3B:00.0 Off |                  Off |\n| 33%   27C    P8    10W / 260W |      1MiB / 48601MiB |      0%      Default |\n|                               |                      |                  N/A |\n+-------------------------------+----------------------+----------------------+\n|   2  Quadro RTX 8000     On   | 00000000:86:00.0 Off |                  Off |\n| 33%   28C    P8    10W / 260W |      1MiB / 48601MiB |      0%      Default |\n|                               |                      |                  N/A |\n+-------------------------------+----------------------+----------------------+\n|   3  Quadro RTX 8000     On   | 00000000:AF:00.0 Off |                  Off |\n| 34%   28C    P8     6W / 260W |      1MiB / 48601MiB |      0%      Default |\n|                               |                      |                  N/A |\n+-------------------------------+----------------------+----------------------+\n                                                                               \n+-----------------------------------------------------------------------------+\n| Processes:                                                                  |\n|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |\n|        ID   ID                                                   Usage      |\n|=============================================================================|\n|  No running processes found                                                 |\n+-----------------------------------------------------------------------------+",
+        "timed_out": false
+      },
+      "os": "Linux-5.4.0-90-generic-x86_64-with-glibc2.29",
+      "paths": {
+        "cwd": {
+          "device": 64,
+          "exists": true,
+          "free_bytes": 3752251621376,
+          "inode": 197568495744,
+          "path": "/homes/lzhang",
+          "total_bytes": 155998754963456
+        }
+      },
+      "probe_status": "SUCCEEDED",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.8.10 (default, Nov  7 2024, 13:10:47) \n[GCC 9.4.0]"
+      },
+      "shared_mounts": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/homescopy taka2new:/fcbackup08 nfs4\n/data4copy taka2new:/fcbackup09 nfs4\n/homes taka2:/homes nfs4\n/suedata1 taka2:/suedata1 nfs4\n/data4 taka2:/data4 nfs4\n/data6 taka2:/data6 nfs4\n/data7 taka9:/data7 nfs4\n/dataT0 taka2new:/dataT0 nfs4\n/dataT1 taka2new:/dataT1 nfs4\n/dataF0 taka2new:/dataF0 nfs4\n/suedata1copy taka2new:/fcbackup06 nfs4\n/dataT4 taka2new:/dataT4 nfs4\n/dataT5 10.113.19.1:/volume1/nfs-test nfs4",
+        "timed_out": false
+      },
+      "slurm": {
+        "sbatch": {
+          "returncode": 127,
+          "stderr": "",
+          "stdout": "",
+          "timed_out": false
+        },
+        "sinfo": {
+          "returncode": 127,
+          "stderr": "/bin/sh: 1: sinfo: not found",
+          "stdout": "",
+          "timed_out": false
+        }
+      },
+      "ssh_reachable": true,
+      "tamoe_environment": {
+        "TAMOE_CACHE_ROOT": null,
+        "TAMOE_DATA_ROOT": null,
+        "TAMOE_LOCAL_SCRATCH": null,
+        "TAMOE_PROJECT_ROOT": null,
+        "TAMOE_RUN_ROOT": null
+      },
+      "torch": {
+        "available": true,
+        "cuda_available": true,
+        "cuda_version": "10.2",
+        "gpu_count": 4,
+        "version": "1.10.0+cu102"
+      }
+    },
+    "doraemon19": {
+      "error": "SSH probe failed without output",
+      "probe_status": "TIMEOUT",
+      "ssh_reachable": false
+    },
+    "doraemon20": {
+      "architecture": "x86_64",
+      "cpu_logical": 96,
+      "cuda_nvcc": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2021 NVIDIA Corporation\nBuilt on Mon_May__3_19:15:13_PDT_2021\nCuda compilation tools, release 11.3, V11.3.109\nBuild cuda_11.3.r11.3/compiler.29920130_0",
+        "timed_out": false
+      },
+      "fqdn": "doraemon20.local",
+      "hostname": "doraemon20",
+      "memory": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "total        used        free      shared  buff/cache   available\nMem:     540864741376 267851898880  2009124864 65168871424 339695362048 273012842496\nSwap:    17162039296 17161830400      208896",
+        "timed_out": false
+      },
+      "nccl": {
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "",
+        "timed_out": false
+      },
+      "nvidia_gpu": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0, GPU-9b09df6b-3a73-f9da-36be-372738472356, NVIDIA A100 80GB PCIe, 81920, 29396, 0, 580.95.05\n1, GPU-60511ca1-d7a9-2b7d-6108-069aee86d5e5, NVIDIA A100 80GB PCIe, 81920, 20776, 0, 580.95.05\n2, GPU-a4da8020-056b-8d97-9171-9ac5f8fcbd30, NVIDIA A100 80GB PCIe, 81920, 15668, 100, 580.95.05\n3, GPU-588bfda8-5c95-35ea-9c0b-84c5fc1963cf, NVIDIA A100 80GB PCIe, 81920, 79550, 17, 580.95.05\n4, GPU-30088f79-55bb-af3d-f64a-b3c304095a05, NVIDIA A100 80GB PCIe, 81920, 81148, 0, 580.95.05\n5, GPU-3b579700-80d9-08ce-03c2-85d64d6db432, NVIDIA A100 80GB PCIe, 81920, 75868, 0, 580.95.05\n6, GPU-f17c0166-5452-4395-8622-b4b6911410c5, NVIDIA A100 80GB PCIe, 81920, 43570, 22, 580.95.05\n7, GPU-658e397f-0384-4379-4448-7ced780e215b, NVIDIA A100 80GB PCIe, 81920, 76610, 0, 580.95.05",
+        "timed_out": false
+      },
+      "nvidia_processes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "GPU-9b09df6b-3a73-f9da-36be-372738472356, 1276818, python, 51748\nGPU-60511ca1-d7a9-2b7d-6108-069aee86d5e5, 1400034, python, 60362\nGPU-a4da8020-056b-8d97-9171-9ac5f8fcbd30, 1279860, python, 65468\nGPU-588bfda8-5c95-35ea-9c0b-84c5fc1963cf, 1232397, python, 1594\nGPU-3b579700-80d9-08ce-03c2-85d64d6db432, 2177023, python, 5272\nGPU-f17c0166-5452-4395-8622-b4b6911410c5, 1245300, /homes/guotaidong/dataF0/Free/guotaidong/miniconda3/envs/nnunetv2_pantsfix/bin/python3.1, 37572\nGPU-658e397f-0384-4379-4448-7ced780e215b, 1282766, python, 4532",
+        "timed_out": false
+      },
+      "nvidia_smi": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Wed Aug  5 14:33:46 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A100 80GB PCIe          Off |   00000000:01:00.0 Off |                    0 |\n| N/A   38C    P0             75W /  300W |   51757MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA A100 80GB PCIe          Off |   00000000:25:00.0 Off |                    0 |\n| N/A   55C    P0             84W /  300W |   60377MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   2  NVIDIA A100 80GB PCIe          Off |   00000000:41:00.0 Off |                    0 |\n| N/A   68C    P0            253W /  300W |   65485MiB /  81920MiB |    100%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   3  NVIDIA A100 80GB PCIe          Off |   00000000:61:00.0 Off |                    0 |\n| N/A   38C    P0             76W /  300W |    1603MiB /  81920MiB |     15%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   4  NVIDIA A100 80GB PCIe          Off |   00000000:81:00.0 Off |                    0 |\n| N/A   40C    P0             75W /  300W |       6MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   5  NVIDIA A100 80GB PCIe          Off |   00000000:A1:00.0 Off |                    0 |\n| N/A   40C    P0             72W /  300W |    5285MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   6  NVIDIA A100 80GB PCIe          Off |   00000000:C1:00.0 Off |                    0 |\n| N/A   55C    P0            277W /  300W |   37583MiB /  81920MiB |    100%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   7  NVIDIA A100 80GB PCIe          Off |   00000000:E1:00.0 Off |                    0 |\n| N/A   42C    P0             77W /  300W |    4543MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A         1276818      C   python                                51748MiB |\n|    1   N/A  N/A         1400034      C   python                                60362MiB |\n|    2   N/A  N/A         1279860      C   python                                65468MiB |\n|    3   N/A  N/A         1232397      C   python                                 1594MiB |\n|    5   N/A  N/A         2177023      C   python                                 5272MiB |\n|    6   N/A  N/A         1245300      C   ...unetv2_pantsfix/bin/python3.1      37572MiB |\n|    7   N/A  N/A         1282766      C   python                                 4532MiB |\n+-----------------------------------------------------------------------------------------+",
+        "timed_out": false
+      },
+      "os": "Linux-6.8.0-88-generic-x86_64-with-glibc2.39",
+      "paths": {
+        "cwd": {
+          "device": 48,
+          "exists": true,
+          "free_bytes": 3752214921216,
+          "inode": 197568495744,
+          "path": "/homes/lzhang",
+          "total_bytes": 155998754963456
+        }
+      },
+      "probe_status": "SUCCEEDED",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0]"
+      },
+      "shared_mounts": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "/homes taka2:/homes nfs4\n/suedata1 taka2:/suedata1 nfs4\n/data4 taka2:/data4 nfs4\n/data6 taka2:/data6 nfs4\n/data7 taka9:/data7 nfs4\n/dataT0 taka2new:/dataT0 nfs4\n/suedata1copy taka2new:/fcbackup06 nfs4\n/homescopy taka2new:/fcbackup08 nfs4\n/data4copy taka2new:/fcbackup09 nfs4\n/dataT1 taka2new:/dataT1 nfs4\n/dataF0 taka2new:/dataF0 nfs4\n/dataG0 syno-ds423-01:/volume1/nfsfolder nfs4\n/dataT4 taka2new:/dataT4 nfs4\n/dataT5 10.113.19.1:/volume1/nfs-test nfs4",
+        "timed_out": false
+      },
+      "slurm": {
+        "sbatch": {
+          "returncode": 127,
+          "stderr": "",
+          "stdout": "",
+          "timed_out": false
+        },
+        "sinfo": {
+          "returncode": 127,
+          "stderr": "/bin/sh: 1: sinfo: not found",
+          "stdout": "",
+          "timed_out": false
+        }
+      },
+      "ssh_reachable": true,
+      "tamoe_environment": {
+        "TAMOE_CACHE_ROOT": null,
+        "TAMOE_DATA_ROOT": null,
+        "TAMOE_LOCAL_SCRATCH": null,
+        "TAMOE_PROJECT_ROOT": null,
+        "TAMOE_RUN_ROOT": null
+      },
+      "torch": {
+        "available": false,
+        "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'"
+      }
+    }
+  },
+  "local": {
+    "architecture": "AMD64",
+    "cpu_logical": 16,
+    "cuda_nvcc": {
+      "returncode": null,
+      "stderr": "FileNotFoundError: [WinError 2] \u6307\u5b9a\u3055\u308c\u305f\u30d5\u30a1\u30a4\u30eb\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3002",
+      "stdout": "",
+      "timed_out": false
+    },
+    "hostname": "lzhang",
+    "memory": {
+      "available_bytes": 37926572032,
+      "total_bytes": 68640649216
+    },
+    "nvidia_gpu": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0, GPU-f8c4e02b-78e7-6487-21fa-6743039755fc, NVIDIA GeForce RTX 5070 Ti, 16303, 9669, 21, 610.47",
+      "timed_out": false
+    },
+    "nvidia_processes": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "GPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 2024, [Insufficient Permissions], [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 11160, C:\\Windows\\System32\\ShellHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 11432, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 9724, C:\\Windows\\explorer.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 12500, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 12508, C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 14968, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\150.0.4078.105\\msedgewebview2.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 15476, [Insufficient Permissions], [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 16832, C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 16992, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 15600, G:\\Microsoft VS Code\\Code.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 19816, C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 12344, C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 12616, C:\\ProgramData\\Logishrd\\LogiOptions\\Software\\Current\\LogiOverlay.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 17608, C:\\Program Files\\Surfshark\\Surfshark.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 25136, D:\\steam\\bin\\cef\\cef.win64\\steamwebhelper.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 3372, C:\\Users\\DHU_Z\\AppData\\Local\\slack\\app-4.51.180\\slack.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 2440, C:\\Users\\DHU_Z\\AppData\\Local\\slack\\app-4.51.180\\slack.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 19848, C:\\Program Files\\WindowsApps\\Microsoft.6365217CE6EB4_102.2502.5002.0_x64__8wekyb3d8bbwe\\MicrosoftSecurityApp\\MicrosoftSecurityApp.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 16728, C:\\Windows\\System32\\ApplicationFrameHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 14044, E:\\Riot Games\\Riot Client\\RiotClientElectron\\Riot Client.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 29512, C:\\Program Files\\WindowsApps\\Microsoft.Edge.GameAssist_1.0.4019.0_x64__8wekyb3d8bbwe\\EdgeGameAssist.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 32340, C:\\Users\\DHU_Z\\AppData\\Roaming\\Tencent\\xwechat\\xplugin\\Plugins\\RadiumWMPF\\20089\\extracted\\runtime\\WeChatAppEx.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 20284, C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.727.6591.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 12988, C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 18264, C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11911.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 43164, [Insufficient Permissions], [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 11956, C:\\Program Files\\Riot Vanguard\\vgtray.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 52236, E:\\Riot Games\\League of Legends\\LeagueClientUxRender.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 43584, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 18012, C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2605.34.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 35160, C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 2016, C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 29560, C:\\Program Files\\WindowsApps\\Microsoft.ScreenSketch_11.2602.49.0_x64__8wekyb3d8bbwe\\SnippingTool\\SnippingTool.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 55396, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 28796, [Insufficient Permissions], [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 1288, C:\\Windows\\explorer.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 39972, C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26062.145.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 40128, C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.727.6591.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 22152, C:\\Program Files\\WindowsApps\\Microsoft.GetHelp_10.2409.42092.0_x64__8wekyb3d8bbwe\\GetHelp.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 56044, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.59\\msedgewebview2.exe, [N/A]\nGPU-f8c4e02b-78e7-6487-21fa-6743039755fc, 32212, E:\\Riot Games\\League of Legends\\Game\\League of Legends.exe, [N/A]",
+      "timed_out": false
+    },
+    "os": "Windows-11-10.0.26200-SP0",
+    "paths": {
+      "project_root": {
+        "exists": true,
+        "free_bytes": 84131360768,
+        "path": "C:\\Users\\DHU_Z\\OneDrive\\\u6587\u6863\\wacv2",
+        "total_bytes": 748824817664
+      }
+    },
+    "python": {
+      "executable": "C:\\Users\\DHU_Z\\OneDrive\\\u6587\u6863\\wacv2\\.venv\\Scripts\\python.exe",
+      "version": "3.13.12 | packaged by conda-forge | (main, Feb  5 2026, 05:41:12) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "slurm": {
+      "sbatch": null,
+      "sinfo": null
+    },
+    "ssh_reachable": true,
+    "tamoe_environment": {
+      "TAMOE_CACHE_ROOT": null,
+      "TAMOE_DATA_ROOT": null,
+      "TAMOE_LOCAL_SCRATCH": null,
+      "TAMOE_PROJECT_ROOT": null,
+      "TAMOE_RUN_ROOT": null
+    },
+    "torch": {
+      "available": true,
+      "cuda_available": false,
+      "cuda_version": null,
+      "gpu_count": 0,
+      "version": "2.13.0+cpu"
+    }
+  },
+  "probe_policy": "non-destructive; no process termination or environment mutation",
+  "scheduler_decision": "ssh_dispatcher_pending_path_confirmation",
+  "schema_version": 1,
+  "shared_path": {
+    "all_hosts_reachable": false,
+    "common_mounts_on_reachable_hosts": {
+      "/data4": [
+        "taka2:/data4"
+      ],
+      "/data4copy": [
+        "taka2new:/fcbackup09"
+      ],
+      "/data7": [
+        "taka9:/data7"
+      ],
+      "/dataF0": [
+        "taka2new:/dataF0"
+      ],
+      "/dataT0": [
+        "taka2new:/dataT0"
+      ],
+      "/dataT1": [
+        "taka2new:/dataT1"
+      ],
+      "/homes": [
+        "taka2:/homes"
+      ],
+      "/homescopy": [
+        "taka2new:/fcbackup08"
+      ],
+      "/suedata1": [
+        "taka2:/suedata1"
+      ],
+      "/suedata1copy": [
+        "taka2new:/fcbackup06"
+      ]
+    },
+    "confirmed_project_root": null,
+    "home_observations": {
+      "doraemon02": {
+        "device": 53,
+        "exists": true,
+        "free_bytes": 3752251621376,
+        "inode": 197568495744,
+        "path": "/homes/lzhang",
+        "total_bytes": 155998754963456
+      },
+      "doraemon03": {
+        "device": 49,
+        "exists": true,
+        "free_bytes": 3752251621376,
+        "inode": 197568495744,
+        "path": "/homes/lzhang",
+        "total_bytes": 155998754963456
+      },
+      "doraemon04": {
+        "device": 102,
+        "exists": true,
+        "free_bytes": 3752251621376,
+        "inode": 197568495744,
+        "path": "/homes/lzhang",
+        "total_bytes": 155998754963456
+      },
+      "doraemon15": {
+        "device": 64,
+        "exists": true,
+        "free_bytes": 3752251621376,
+        "inode": 197568495744,
+        "path": "/homes/lzhang",
+        "total_bytes": 155998754963456
+      },
+      "doraemon20": {
+        "device": 48,
+        "exists": true,
+        "free_bytes": 3752214921216,
+        "inode": 197568495744,
+        "path": "/homes/lzhang",
+        "total_bytes": 155998754963456
+      }
+    },
+    "reason": "No identical configured project root was observed on all six hosts.",
+    "status": "UNRESOLVED"
+  }
+}
