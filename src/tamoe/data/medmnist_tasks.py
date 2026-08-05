@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum
 
 
-class ObjectiveType(StrEnum):
+class ObjectiveType(str, Enum):
     BINARY_CLASS = "binary-class"
     MULTI_CLASS = "multi-class"
 
