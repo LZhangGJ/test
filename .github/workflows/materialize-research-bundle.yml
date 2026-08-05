@@ -36,20 +36,24 @@ jobs:
           for item in manifest["parts"]:
               path = bundle_dir / item["name"]
               data = path.read_bytes()
-              digest = hashlib.sha256(data).hexdigest()
-              if digest != item["sha256"]:
-                  raise RuntimeError(f"Checksum mismatch for {path}: {digest}")
+              print(
+                  f"{item['name']}: bytes={len(data)} "
+                  f"sha256={hashlib.sha256(data).hexdigest()}"
+              )
               chunks.append(data)
 
+          # GitHub's text contents API may normalize harmless line wrapping.
+          # Base64 whitespace is semantically irrelevant; the decoded archive
+          # checksum below is the authoritative end-to-end integrity check.
           encoded = b"".join(chunks)
-          encoded_digest = hashlib.sha256(encoded).hexdigest()
-          if encoded_digest != manifest["base64_sha256"]:
-              raise RuntimeError(f"Base64 checksum mismatch: {encoded_digest}")
-
-          archive_bytes = base64.b64decode(encoded, validate=False)
+          normalized = b"".join(encoded.split())
+          archive_bytes = base64.b64decode(normalized, validate=True)
           archive_digest = hashlib.sha256(archive_bytes).hexdigest()
           if archive_digest != manifest["archive_sha256"]:
-              raise RuntimeError(f"Archive checksum mismatch: {archive_digest}")
+              raise RuntimeError(
+                  f"Archive checksum mismatch: {archive_digest}; "
+                  f"expected {manifest['archive_sha256']}"
+              )
 
           archive_path = Path("/tmp/tamoe_research_bundle.tar.gz")
           archive_path.write_bytes(archive_bytes)
@@ -61,7 +65,10 @@ jobs:
                       raise RuntimeError(f"Unsafe archive path: {member.name}")
               tf.extractall(root)
 
-          print(f"Extracted {len(list(root.rglob('*')))} paths")
+          print(
+              f"Verified archive sha256={archive_digest}; "
+              f"extracted {len(list(root.rglob('*')))} paths"
+          )
           PY
 
       - name: Commit materialized files
