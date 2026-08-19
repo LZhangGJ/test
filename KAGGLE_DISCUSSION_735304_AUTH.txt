@@ -1,0 +1,53 @@
+Topic #735304: Best single-model score
+  Author: roy214
+  Posted: 2026-08-14 23:38:09.839000
+  Votes: 8  Comments: 15
+
+What is the best score you’ve achieved with a single model?
+
+I’m trying to train a strong single model first before moving on to ensembling, and I’m curious how far a single model can go.
+
+I’ve noticed that most of the public solutions use ensembles of 20+ models and achieve around 0.91. For those scoring around 0.92–0.94 on the leaderboard, are you also using ensembles, or is it possible to reach that range with a single model?
+
+For reference, my current best score is 0.887 with DINOv2.
+
+Comments:
+├─ Tucker Arrants (2026-08-16 15:23:04.520000) [+3]
+│  Single model 0.934 @ 224px 
+│  
+│  Update: 0.942 with some tweaks, still @ 224px
+  ├─ Chikuwabu (2026-08-17 00:32:44.853000) [+0]
+  │  Is this a single fold, or N-fold ensemble?
+    ├─ Tucker Arrants (2026-08-17 01:52:13.533000) [+3]
+    │  5 fold ensemble
+    ├─ [deleted] (2026-08-17 21:00:36.593000) [+0]
+    │  [deleted]
+    ├─ Tom Aindow (2026-08-17 21:00:54.030000) [+1]
+    │  Really impressive result at 224x, are you willing to give any insight into your approach, either labeling or modelling? My current thinking is that labeling can be a significant source of error, si...
+    ├─ Tucker Arrants (2026-08-17 21:33:40.020000) [+0]
+    │  My label extraction is very crude - haven’t spent much time on it. But yes, I agree, I think it’s important here.
+    │  
+    │  The model architecture is standard for these types of competitions and relatively ...
+├─ Tim Krige (2026-08-15 14:37:39.307000) [+3]
+│  I am on a single model. OOF AUC = LB AUC within noise, 0.92.
+├─ Chikuwabu (2026-08-15 03:07:13.947000) [+5]
+│  A single model actually works much better than you'd expect.
+├─ PC Jimmmy (2026-08-15 01:32:37.950000) [+6]
+│  In my option - 9 days into a competition is a very silly time to be wasting efforts refining ensemble models.
+├─ Tom Aindow (2026-08-15 06:46:10.823000) [+4]
+│  Single model 0.915, DinoV2 based. 
+│  
+│  Highly doubt the top results are ensembles, look at the efficiency lb, you can see many high scoring submissions also have decent run times, i.e. they're not run...
+  ├─ Berat Kirbiyik (2026-08-16 12:51:42.463000) [+0]
+  │  Single model 0.92 is impressive. Would you mind sharing the input geometry you landed on — resolution, physical crop in mm, and slices per series?
+  │  
+  │  We're at 0.826 with 192px / 9 slices / 4 sequence...
+    ├─ Tim Krige (2026-08-16 13:27:02.583000) [+2]
+    │  Sharing is quite revealing on my methods. What I can strongly suggest - look at the images your model sees. Does it look detailed enough? Do you think 192px is sufficient to see mm level details? 
+    │  ...
+    ├─ Tom Aindow (2026-08-17 20:55:27.327000) [+1]
+    │  Sure, I'm using 392x with 150mm center crop (0.383 mm/px) and I randomly sample a bag of 32 slices per study across all studies during training. I'm still not quite sure what does and doesn't work ...
+├─ Aic (2026-08-17 09:09:42.770000) [+0]
+│  I’d like to ask how long it usually takes to train a model using DINOv2. Also, roughly how much computational resources are required for this competition?
+  ├─ Tim Krige (2026-08-17 09:44:32.100000) [+1]
+  │  This is a hard question to answer. Dino has a variety of sizes, small to huge. Within a size there are layers, with larger sized having more layers. In some competitions there have been amazing res...

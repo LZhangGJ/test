@@ -1,0 +1,43 @@
+Topic #735826: What is the real bottleneck now: labels, image pipeline, or model capacity?
+  Author: Oscar Yáñez Feijóo
+  Posted: 2026-08-18 09:38:04.704000
+  Votes: 2  Comments: 4
+
+I’ve been following the recent discussions and there seems to be an interesting pattern:
+
+
+
+Single DINO-based models can already reach around 0.91–0.92+.
+
+Increasing encoder size does not necessarily improve CV.
+
+Several people report meaningful gains from crop geometry, resolution and slice selection.
+
+At the same time, most of the training labels are derived from reports, and label quality may itself impose a ceiling.
+
+
+This makes me wonder: what do you currently think is the main bottleneck in this competition?
+
+A. Report-derived label quality
+
+B. MRI preprocessing / physical crop / slice selection
+
+C. Model architecture or backbone capacity
+
+D. Validation strategy
+
+E. Something else entirely
+
+Without revealing solution-specific details, I’d be interested to hear which category has produced the largest improvements in your own experiments.
+
+For me, the emerging lesson is that improving what the model sees and what we teach it may be more important than simply using a larger backbone.
+
+Comments:
+├─ Tucker Arrants (2026-08-18 18:26:13.197000) [+1]
+│  Check to see how your label extractor performs relative to the 58 provided labels. Then check how your image model performs on them. If your image model is not beating the label extractor "teacher"...
+├─ Chikuwabu (2026-08-18 13:33:26.663000) [+3]
+│  The quality of the soft labels and not being overly influenced by the public code are important.
+├─ Tom Aindow (2026-08-18 13:20:43.847000) [+1]
+│  I think the labeling process is particularly interesting and will prove decisive in this competition. It's one thing to extract labels from the report, but another to faithfully reproduce the label...
+├─ Seung Sup Lee (2026-08-18 10:26:01.333000) [+0]
+│  Interesting question. I’m new to this competition, but I’ve spent the last few days approaching it mainly as a systems/optimization problem rather than assuming that a larger model will automatical...
