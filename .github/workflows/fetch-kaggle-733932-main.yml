@@ -1,0 +1,73 @@
+name: One-shot fetch Kaggle discussion 733932
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fetch-kaggle-733932-main.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch public Kaggle discussion payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import urllib.error
+          import urllib.request
+          from pathlib import Path
+
+          endpoint = 'https://www.kaggle.com/api/i/discussions.DiscussionsService/GetForumTopicById?forumTopicId=733932&includeComments=true'
+          request = urllib.request.Request(
+              endpoint,
+              headers={
+                  'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36',
+                  'Accept': 'application/json, text/plain, */*',
+              },
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  body = response.read()
+                  status = response.status
+                  headers = dict(response.headers.items())
+          except urllib.error.HTTPError as error:
+              body = error.read()
+              status = error.code
+              headers = dict(error.headers.items())
+          payload = {
+              'request_url': endpoint,
+              'http_status': status,
+              'response_headers': headers,
+              'body_text': body.decode('utf-8', errors='replace'),
+          }
+          try:
+              payload['body_json'] = json.loads(body)
+          except Exception:
+              payload['body_json'] = None
+          Path('KAGGLE_DISCUSSION_733932_PAYLOAD.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8'
+          )
+          print('status', status, 'bytes', len(body), 'json', payload['body_json'] is not None)
+          PY
+
+      - name: Commit result
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add KAGGLE_DISCUSSION_733932_PAYLOAD.json
+          git commit -m 'Store temporary Kaggle discussion 733932 payload [skip ci]'
+          git push origin HEAD:main
