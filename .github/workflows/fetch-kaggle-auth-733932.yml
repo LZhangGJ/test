@@ -23,12 +23,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # Retry generation: the previous ciphertext intentionally cannot be reused.
           openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:3072 -out /tmp/kaggle_bridge_private.pem
           openssl pkey -in /tmp/kaggle_bridge_private.pem -pubout -out KAGGLE_BRIDGE_PUBLIC.pem
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add KAGGLE_BRIDGE_PUBLIC.pem
-          git commit -m 'Publish ephemeral Kaggle bridge public key [skip ci]'
+          git commit -m 'Publish refreshed ephemeral Kaggle bridge public key [skip ci]'
           git push origin HEAD:main
 
       - name: Await encrypted token
@@ -65,7 +66,7 @@ jobs:
           chmod 600 /tmp/kaggle_bridge_token.txt
           export KAGGLE_API_TOKEN="$(cat /tmp/kaggle_bridge_token.txt)"
           set +e
-          kaggle forums topics show 733932 --page-size 1000 > KAGGLE_DISCUSSION_733932_AUTH.txt 2>&1
+          timeout 120s kaggle forums topics show 733932 --page-size 1000 > KAGGLE_DISCUSSION_733932_AUTH.txt 2>&1
           status=$?
           set -e
           printf '%s\n' "$status" > KAGGLE_DISCUSSION_733932_AUTH.status
