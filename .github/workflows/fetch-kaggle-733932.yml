@@ -1,0 +1,74 @@
+name: Fetch Kaggle discussion 733932
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch discussion through public endpoints
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p out
+          BASE='https://www.kaggle.com/api/i/discussions.DiscussionsService/GetForumTopicById'
+          QUERY='forumTopicId=733932&includeComments=true'
+
+          curl -L --compressed --connect-timeout 20 --max-time 90 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36' \
+            -H 'Accept: application/json, text/plain, */*' \
+            -D out/get.headers \
+            -o out/get.body \
+            -w '%{http_code}\n' \
+            "$BASE?$QUERY" > out/get.status || true
+
+          curl -L --compressed --connect-timeout 20 --max-time 90 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36' \
+            -H 'Accept: application/json, text/plain, */*' \
+            -H 'Content-Type: application/json' \
+            -X POST \
+            --data '{"forumTopicId":733932,"includeComments":true}' \
+            -D out/post.headers \
+            -o out/post.body \
+            -w '%{http_code}\n' \
+            "$BASE" > out/post.status || true
+
+          curl -L --compressed --connect-timeout 20 --max-time 90 \
+            -A 'Mozilla/5.0' \
+            -D out/jina.headers \
+            -o out/jina.body \
+            -w '%{http_code}\n' \
+            'https://r.jina.ai/http://www.kaggle.com/competitions/rsna-knee-abnormality-detection/discussion/733932' > out/jina.status || true
+
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root = Path('out')
+          for name in ['get', 'post', 'jina']:
+              status = (root / f'{name}.status').read_text(errors='replace').strip() if (root / f'{name}.status').exists() else 'missing'
+              body = (root / f'{name}.body').read_bytes() if (root / f'{name}.body').exists() else b''
+              print(name, 'status=', status, 'bytes=', len(body), 'prefix=', body[:160])
+              if body:
+                  try:
+                      data = json.loads(body)
+                  except Exception:
+                      continue
+                  (root / f'{name}.pretty.json').write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+          PY
+
+      - name: Upload fetched payloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: kaggle-discussion-733932
+          path: out/
+          if-no-files-found: error
+          retention-days: 1
